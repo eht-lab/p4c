@@ -1,6 +1,9 @@
 # The BUILD file for p4testgen, inspired by the tool's cmake build rules.
 
 load("@bazel_skylib//rules:build_test.bzl", "build_test")
+load("@com_google_protobuf//bazel:cc_proto_library.bzl", "cc_proto_library")
+load("@com_google_protobuf//bazel:proto_library.bzl", "proto_library")
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library", "cc_test")
 
 package(
     default_applicable_licenses = ["//:license"],
@@ -82,7 +85,7 @@ cc_library(
     deps = [
         "//:ir_frontend_midend_control_plane",
         "//:lib",
-        "@boost//:multiprecision",
+        "@boost.multiprecision//:boost.multiprecision",
         "@com_github_p4lang_p4runtime//:p4info_cc_proto",
         "@com_github_z3prover_z3//:api",
         "@com_google_absl//absl/container:btree",
@@ -163,7 +166,7 @@ cc_library(
         ":register_testgen_targets",
         "//:ir_frontend_midend_control_plane",
         "//:lib",
-        "@boost//:multiprecision",
+        "@boost.multiprecision//:boost.multiprecision",
         "@com_github_pantor_inja//:inja",
         "@com_google_absl//absl/container:btree",
         "@com_google_absl//absl/strings",
@@ -185,7 +188,7 @@ cc_binary(
     deps = [
         ":testgen_lib",
         "//:lib",
-        "@boost//:multiprecision",
+        "@boost.multiprecision//:boost.multiprecision",
     ],
 )
 

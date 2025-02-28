@@ -1,0 +1,10 @@
+# https://bazel.build/external/migration#workspace.bzlmod
+#
+# When bzlmod is enabled and this file exists, the contents of WORKSPACE.bazel
+# is ignored and this file is used instead. Once all dependencies have been
+# migrated over to `MODULE.bazel`, this file will be left intentionally empty.
+
+# load("//:bazel/p4c_bzlmod_deps.bzl", "p4c_bzlmod_deps")
+
+# p4c_bzlmod_deps()
+

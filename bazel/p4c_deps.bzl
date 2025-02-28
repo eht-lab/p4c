@@ -47,9 +47,9 @@ filegroup(
         git_repository(
             name = "com_github_p4lang_p4runtime",
             remote = "https://github.com/p4lang/p4runtime",
-            # Newest commit on main branch as of August 18, 2024.
-            commit = "ec4eb5ef70dbcbcbf2f8357a4b2b8c2f218845a5",
-            shallow_since = "1680213111 -0700",
+            # Newest commit on main branch as of Feb 27, 2025.
+            commit = "73c7c8e7bdee66941b5a9c584b146b419e8f8607",
+            # shallow_since = "1680213111 -0700",
             strip_prefix = "proto",
         )
     if not native.existing_rule("com_google_googletest"):

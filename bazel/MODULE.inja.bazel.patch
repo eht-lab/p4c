@@ -1,0 +1,5 @@
+--- /dev/null
++++ MODULE.bazel
+@@ -0,0 +1,2 @@
++module(name = "inja", repo_name = "com_github_pantor_inja")
++bazel_dep(name = "nlohmann_json", version = "3.11.3.bcr.1")

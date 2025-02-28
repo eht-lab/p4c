@@ -1,7 +1,6 @@
-# Remove once #5066 is resolved.
+# Use Bzlmod (`MODULE.bazel`) instead of `WORKSPACE.bazel`.
+common --enable_bzlmod
 common --enable_workspace
-# Enable once #5066 is resolved.
-common --noenable_bzlmod
 
 # Use C++17.
 build --cxxopt=-std=c++17

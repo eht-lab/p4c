@@ -1,3 +1,6 @@
+load("@com_google_protobuf//bazel:cc_proto_library.bzl", "cc_proto_library")
+load("@com_google_protobuf//bazel:proto_library.bzl", "proto_library")
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
 load("@rules_license//rules:license.bzl", "license")
 load("//:bazel/bison.bzl", "genyacc")
 load("//:bazel/flex.bzl", "genlex")
@@ -54,8 +57,8 @@ cc_library(
     hdrs = glob(["lib/*.h"]),
     deps = [
         ":config_h",
-        "@boost//:format",
-        "@boost//:multiprecision",
+        "@boost.format//:boost.format",
+        "@boost.multiprecision//:boost.multiprecision",
         "@com_google_absl//absl/container:flat_hash_map",
         "@com_google_absl//absl/container:node_hash_set",
         "@com_google_absl//absl/numeric:bits",
@@ -174,7 +177,7 @@ filegroup(
         "//backends/p4tools:ir_extension",
         # p4c extensions may set this target to a `filegroup` containing
         # additional .def files.
-        "@com_github_p4lang_p4c_extension//:ir_extension",
+        "@p4c_ir_extension//:ir_extension",
     ],
 )
 
@@ -238,9 +241,9 @@ cc_library(
         ":config_h",
         ":lib",
         ":p4info_dpdk_cc_proto",
-        "@boost//:algorithm",
-        "@boost//:functional",
-        "@boost//:iostreams",
+        "@boost.algorithm//:boost.algorithm",
+        "@boost.functional//:boost.functional",
+        "@boost.iostreams//:boost.iostreams",
         "@com_github_p4lang_p4runtime//:p4info_cc_proto",
         "@com_github_p4lang_p4runtime//:p4runtime_cc_proto",
         "@com_github_p4lang_p4runtime//:p4types_cc_proto",
@@ -471,15 +474,15 @@ cc_library(
         "backends/graphs/parsers.h",
         "backends/graphs/version.h",
     ],
-    defines = [
-        # Disable ADL for boost, otherwise the method resolution for
-        # `ordered_map` and `graph` clash on method `boost::get`
-        "BOOST_NO_ARGUMENT_DEPENDENT_LOOKUP",
-    ],
+    # defines = [
+    #     # Disable ADL for boost, otherwise the method resolution for
+    #     # `ordered_map` and `graph` clash on method `boost::get`
+    #     "BOOST_NO_ARGUMENT_DEPENDENT_LOOKUP",
+    # ],
     deps = [
         ":config_h",
         ":ir_frontend_midend_control_plane",
         ":lib",
-        "@boost//:graph",
+        "@boost.graph//:boost.graph",
     ],
 )
