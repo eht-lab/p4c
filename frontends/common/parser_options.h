@@ -38,7 +38,9 @@ class ToP4;
 /// `configure`.
 // TODO: This should be std::filesystem::path.
 extern const char *p4includePath;
+#ifdef SUPPORT_P4_14
 extern const char *p4_14includePath;
+#endif
 
 /// Try to guess whether a file is a "system" file
 bool isSystemFile(cstring filename);

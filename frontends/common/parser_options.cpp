@@ -385,9 +385,11 @@ std::vector<const char *> *ParserOptions::process(int argc, char *const argv[]) 
     }
     this->exe_name = cstring(executablePath.stem().c_str());
 
+#ifdef SUPPORT_P4_14
     searchForIncludePath(p4_14includePath,
                          {"p4_14include"_cs, "../p4_14include"_cs, "../../p4_14include"_cs},
                          executablePath.c_str());
+#endif
     searchForIncludePath(p4includePath, {"p4include"_cs, "../p4include"_cs, "../../p4include"_cs},
                          executablePath.c_str());
 
@@ -406,15 +408,14 @@ const char *ParserOptions::getIncludePath() const {
 #ifdef SUPPORT_P4_14
     char *driverP4IncludePath =
         isv1() ? getenv("P4C_14_INCLUDE_PATH") : getenv("P4C_16_INCLUDE_PATH");
-    if (driverP4IncludePath != nullptr) path += (" -I"_cs + cstring(driverP4IncludePath));
     path += " -I"_cs + (isv1() ? p4_14includePath : p4includePath);
     if (!isv1()) path += " -I"_cs + p4includePath + "/bmv2"_cs;
 #else
     char *driverP4IncludePath = getenv("P4C_16_INCLUDE_PATH");
-    if (driverP4IncludePath != nullptr) path += (" -I"_cs + cstring(driverP4IncludePath));
     path += " -I"_cs + p4includePath;
     path += " -I"_cs + p4includePath + "/bmv2"_cs;
 #endif
+    if (driverP4IncludePath != nullptr) path += (" -I"_cs + cstring(driverP4IncludePath));
     return path.c_str();
 }
 
