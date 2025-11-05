@@ -7,11 +7,12 @@ macro(p4c_obtain_googletest)
   # Fetch and build the GTest dependency.
   FetchContent_Declare(
     gtest
-    GIT_REPOSITORY https://github.com/google/googletest.git
+    SOURCE_DIR ${CMAKE_SOURCE_DIR}/thrid-party/gtest-src
+    # GIT_REPOSITORY https://github.com/google/googletest.git
     # https://github.com/google/googletest/releases/tag/v1.14.0
-    GIT_TAG        f8d7d77c06936315286eb55f8de22cd23c188571
-    GIT_PROGRESS TRUE
-    DOWNLOAD_EXTRACT_TIMESTAMP TRUE
+    # GIT_TAG        f8d7d77c06936315286eb55f8de22cd23c188571
+    # GIT_PROGRESS TRUE
+    # DOWNLOAD_EXTRACT_TIMESTAMP TRUE
   )
   FetchContent_MakeAvailable(gtest)
   set(FETCHCONTENT_QUIET ${FETCHCONTENT_QUIET_PREV})

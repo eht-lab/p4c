@@ -37,7 +37,7 @@ set (CMAKE_USE_RELATIVE_PATHS 1)
 OPTION (ENABLE_DOCS "Build the documentation" OFF)
 OPTION (ENABLE_GTESTS "Enable building and running GTest unit tests" ON)
 OPTION (ENABLE_BMV2 "Build the BMV2 backend (required for the full test suite)" ON)
-OPTION (ENABLE_EBPF "Build the EBPF backend (required for the full test suite)" ON)
+OPTION (ENABLE_EBPF "Build the EBPF backend (required for the full test suite)" OFF)
 OPTION (ENABLE_UBPF "Build the uBPF backend (required for the full test suite)" ON)
 OPTION (ENABLE_DPDK "Build the DPDK backend (required for the full test suite)" ON)
 OPTION (ENABLE_TOFINO "Build the TOFINO backend (required for the full test suite)" OFF)
@@ -428,9 +428,10 @@ set(FETCHCONTENT_QUIET OFF)
 # Fetch and declare the P4Runtime library.
 FetchContent_Declare(
   p4runtime
-  GIT_REPOSITORY https://github.com/p4lang/p4runtime.git
-  GIT_TAG        ec4eb5ef70dbcbcbf2f8357a4b2b8c2f218845a5
-  GIT_PROGRESS TRUE
+  SOURCE_DIR ${CMAKE_SOURCE_DIR}/thrid-party/p4runtime-src
+  # GIT_REPOSITORY https://github.com/p4lang/p4runtime.git
+  # GIT_TAG        ec4eb5ef70dbcbcbf2f8357a4b2b8c2f218845a5
+  # GIT_PROGRESS TRUE
 )
 FetchContent_MakeAvailable(p4runtime)
 set(FETCHCONTENT_QUIET ${FETCHCONTENT_QUIET_PREV})

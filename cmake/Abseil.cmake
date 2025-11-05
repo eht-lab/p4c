@@ -39,11 +39,12 @@ macro(p4c_obtain_abseil)
     
     FetchContent_Declare(
       abseil
-      URL https://github.com/abseil/abseil-cpp/releases/download/${P4C_ABSEIL_VERSION}/abseil-cpp-${P4C_ABSEIL_VERSION}.tar.gz
-      URL_HASH SHA256=3c743204df78366ad2eaf236d6631d83f6bc928d1705dd0000b872e53b73dc6a
-      USES_TERMINAL_DOWNLOAD TRUE
-      GIT_PROGRESS TRUE
-      DOWNLOAD_EXTRACT_TIMESTAMP TRUE
+      SOURCE_DIR ${CMAKE_SOURCE_DIR}/thrid-party/abseil-src
+      # URL https://github.com/abseil/abseil-cpp/releases/download/${P4C_ABSEIL_VERSION}/abseil-cpp-${P4C_ABSEIL_VERSION}.tar.gz
+      # URL_HASH SHA256=3c743204df78366ad2eaf236d6631d83f6bc928d1705dd0000b872e53b73dc6a
+      # USES_TERMINAL_DOWNLOAD TRUE
+      # GIT_PROGRESS TRUE
+      # DOWNLOAD_EXTRACT_TIMESTAMP TRUE
     )
     fetchcontent_makeavailable_but_exclude_install(abseil)
 
