@@ -1,0 +1,76 @@
+/*
+Copyright (C) 2025-2026 EHTech(Beijing)Co.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+#ifndef BACKENDS_APOLLO_COMMON_OPTIONS_H_
+#define BACKENDS_APOLLO_COMMON_OPTIONS_H_
+
+#include <getopt.h>
+
+#include "frontends/common/options.h"
+
+namespace P4::Apollo {
+
+class ApolloOptions : public CompilerOptions {
+ public:
+    /// Generate externs.
+    bool emitExterns = false;
+    /// File to output to.
+    std::filesystem::path outputFile;
+    /// Read from json.
+    bool loadIRFromJson = false;
+    /// Generate bins.
+    bool generateBins = true;
+
+    ApolloOptions() {
+        registerOption(
+            "--emit-externs", nullptr,
+            [this](const char *) {
+                emitExterns = true;
+                return true;
+            },
+            "[Apollo back-end] Force externs be emitted by the backend.\n"
+            "The generated code follows the Apollo JSON specification.");
+        registerOption(
+            "-o", "outfile",
+            [this](const char *arg) {
+                outputFile = arg;
+                return true;
+            },
+            "Write output to outfile");
+        registerOption(
+            "--fromJSON", "file",
+            [this](const char *arg) {
+                loadIRFromJson = true;
+                file = arg;
+                return true;
+            },
+            "Use IR representation from JsonFile dumped previously,"
+            "the compilation starts with reduced midEnd.");
+        registerOption(
+            "--gen-json-only", nullptr,
+            [this](const char *) {
+                generateBins = false;
+                return true;
+            },
+            "Generate firmware or not.");
+    }
+};
+
+using ApolloContext = P4CContextWithOptions<ApolloOptions>;
+
+}  // namespace P4::Apollo
+
+#endif /* BACKENDS_APOLLO_COMMON_OPTIONS_H_ */

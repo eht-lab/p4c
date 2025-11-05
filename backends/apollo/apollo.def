@@ -1,0 +1,8 @@
+
+// Represent a signed integer value using just 'width' bits.
+class Apollo_IntMod : Operation_Unary {
+      unsigned width;
+      stringOp = "><";
+      precedence = DBPrint::Prec_Low;
+#nodbprint
+}

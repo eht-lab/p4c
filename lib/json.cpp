@@ -103,7 +103,12 @@ bool JsonValue::operator==(const JsonValue &other) const {
 void JsonArray::serialize(std::ostream &out) const {
     bool isSmall = true;
     for (auto v : *this) {
-        if (!v->is<JsonValue>()) isSmall = false;
+        if (v == nullptr) {
+        } else {
+            if (!v->is<JsonValue>()) {
+                isSmall = false;
+            }
+        }
     }
     out << "[";
     if (!isSmall) out << IndentCtl::indent;
@@ -114,10 +119,17 @@ void JsonArray::serialize(std::ostream &out) const {
             if (isSmall) out << " ";
         }
         if (!isSmall) out << IndentCtl::endl;
-        if (v == nullptr)
+        if (v == nullptr) {
             out << "null";
-        else
-            v->serialize(out);
+        } else {
+            try {
+                v->serialize(out);
+            } catch (const std::exception& e) {
+                throw;
+            } catch (...) {
+                throw;
+            }
+        }
         first = false;
     }
     if (!isSmall) out << IndentCtl::unindent << IndentCtl::endl;

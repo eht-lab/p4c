@@ -40,6 +40,11 @@ if (ENABLE_DPDK)
   list (APPEND P4C_TARGET_CFGS p4c_src/p4c.dpdk.cfg)
 endif()
 
+if (ENABLE_APOLLO)
+  list (APPEND P4C_TARGET_CFGS p4c_src/p4c.apollo.cfg)
+endif()
+
+
 install (PROGRAMS ${P4C_BINARY_DIR}/${P4C_DRIVER_NAME}
   DESTINATION ${P4C_RUNTIME_OUTPUT_DIRECTORY})
 install (DIRECTORY p4c_src
