@@ -64,6 +64,7 @@ make adding new backends easy.
 -->
 ## Sample Backends in P4C
 P4C includes seven sample backends, catering to different target architectures and use cases:
+* p4c-apollo-tuna: can be used to target the P4 tuna_nic written using the TUNA.
 * p4c-bm2-ss: can be used to target the P4 `simple_switch` written using
   the [BMv2 behavioral model](https://github.com/p4lang/behavioral-model),
 * p4c-dpdk: can be used to target the [DPDK software switch (SWX) pipeline](https://doc.dpdk.org/guides/rel_notes/release_20_11.html),
@@ -197,6 +198,10 @@ sudo dpkg -i /path/to/package.deb
     ```
     git submodule update --init --recursive
     ```
+    Specially, if you want to use apollo backend, please clone it from [eht github](https://github.com/eht-lab/p4c) directly.
+    ```
+    git clone https://github.com/eht-lab/p4c.git
+    ```
 
 2.  Install [dependencies](#dependencies). You can find specific instructions
     for Ubuntu 22.04 [here](#ubuntu-dependencies) and for macOS 11
@@ -218,6 +223,7 @@ sudo dpkg -i /path/to/package.deb
       symbols to run in gdb. Default is Release.
      - `-DCMAKE_INSTALL_PREFIX=<path>` -- set the directory where
        `make install` installs the compiler. Defaults to /usr/local.
+     - `-DENABLE_APOLLO=ON|OFF`. Enable [the apollo backend](backends/apollo/README.md). Default ON.
      - `-DENABLE_BMV2=ON|OFF`. Enable [the bmv2 backend](backends/bmv2/README.md). Default ON.
      - `-DENABLE_EBPF=ON|OFF`. Enable [the ebpf backend](backends/ebpf/README.md). Default ON.
      - `-DENABLE_P4TC=ON|OFF`. Enable [the TC backend](backends/tc/README.md). Default ON.
@@ -260,6 +266,10 @@ sudo dpkg -i /path/to/package.deb
     using:
     ```
     p4c -b bmv2-ss-p4org program.p4 -o program.bmv2.json
+    ```
+    If you want to compile a P4-16 program for Apollo using:
+    ```
+    p4c-apollo-tuna program.p4 -o program.apollo.json
     ```
 
 If you plan to contribute to P4C, you'll find more useful information
@@ -515,6 +525,8 @@ containers used during the `docker build` process. On macOS in particular the
 default is 2GB, which is not enough to build P4C. Increase the memory limit to
 at least 4GB via Docker preferences or you are likely to see "internal compiler
 errors" from GCC which are caused by low memory.
+
+If you want to use apollo backend, please follow the [p4-playground docker readme](https://github.com/eht-lab/p4-playground/blob/main/docker/readme.md) to build image.
 
 ## Bazel
 [![Bazel Build](https://github.com/p4lang/p4c/actions/workflows/ci-bazel.yml/badge.svg)](https://github.com/p4lang/p4c/actions/workflows/ci-bazel.yml)
