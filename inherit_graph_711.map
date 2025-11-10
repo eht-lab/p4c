@@ -1,3 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$struct_p4_1_1_t_c_1_1_action_param.html" title=" " alt="" coords="5,5,157,31"/>
+<area shape="rect" id="Node000000" href="$class_p4_1_1_remove_complex_expressions_policy.html" title=" " alt="" coords="5,47,241,87"/>
+<area shape="rect" id="Node000001" href="$class_p4_1_1_apollo_1_1_process_controls.html" title=" " alt="" coords="289,5,488,31"/>
+<area shape="poly" id="edge2598_Node000000_Node000001" title=" " alt="" coords="244,42,319,28,320,33,245,47"/>
+<area shape="rect" id="Node000002" href="$class_p4_1_1_b_m_v2_1_1_process_controls.html" title=" " alt="" coords="291,55,487,80"/>
+<area shape="poly" id="edge2599_Node000000_Node000002" title=" " alt="" coords="255,65,291,65,291,70,255,70"/>
+<area shape="rect" id="Node000003" href="$class_p4_1_1_d_p_d_k_1_1_process_controls.html" title="Only simplify complex expression in ingress/egress." alt="" coords="291,104,486,129"/>
+<area shape="poly" id="edge2600_Node000000_Node000003" title=" " alt="" coords="245,87,320,101,319,107,244,93"/>
 </map>

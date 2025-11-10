@@ -2,7 +2,7 @@ var searchData=
 [
   ['v1model_0',['V1Model',['../class_p4_1_1_p4_v1_1_1_v1_model.html',1,'P4::P4V1']]],
   ['v1modelarchhandlerbuilder_1',['V1ModelArchHandlerBuilder',['../struct_p4_1_1_control_plane_a_p_i_1_1_standard_1_1_v1_model_arch_handler_builder.html',1,'P4::ControlPlaneAPI::Standard']]],
-  ['v1modelproperties_2',['V1ModelProperties',['../class_p4_1_1_b_m_v2_1_1_v1_model_properties.html',1,'P4::BMV2']]],
+  ['v1modelproperties_2',['V1ModelProperties',['../class_p4_1_1_apollo_1_1_v1_model_properties.html',1,'P4::Apollo::V1ModelProperties'],['../class_p4_1_1_b_m_v2_1_1_v1_model_properties.html',1,'P4::BMV2::V1ModelProperties']]],
   ['v1modelstdmetatranslateingressexittest_3',['V1ModelStdMetaTranslateIngressExitTest',['../class_p4_1_1_test_1_1_v1_model_std_meta_translate_ingress_exit_test.html',1,'P4::Test']]],
   ['v1modelstdmetatranslatenegativetest_4',['V1ModelStdMetaTranslateNegativeTest',['../class_p4_1_1_test_1_1_v1_model_std_meta_translate_negative_test.html',1,'P4::Test']]],
   ['v1modelstdmetatranslatetest_5',['V1ModelStdMetaTranslateTest',['../class_p4_1_1_test_1_1_v1_model_std_meta_translate_test.html',1,'P4::Test']]],

@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$struct_p4_1_1_b_f_r_t_1_1_b_f_runtime_generator_1_1_register.html" title="Common register representation between PSA and other architectures." alt="" coords="5,5,228,45"/>
+<area shape="rect" id="Node000000" href="$struct_p4_1_1_apollo_1_1_helpers_1_1_counterlike_traits_3_01_standard_1_1_counter_extern_3_01_st6aa1e1d9beca59cca1f8192b2ae381ed.html" title="CounterlikeTraits&lt;&gt; specialization for CounterExtern for PSA" alt="" coords="5,5,201,75"/>
+<area shape="rect" id="Node000001" href="$struct_p4_1_1_apollo_1_1_helpers_1_1_counterlike_traits_3_01_standard_1_1_counter_extern_3_01_st350a179cb4e2fc1b9b6b745106828881.html" title="CounterlikeTraits&lt;&gt; specialization for CounterExtern for PNA" alt="" coords="249,5,447,75"/>
+<area shape="poly" id="edge2312_Node000000_Node000001" title=" " alt="" coords="215,37,249,37,249,43,215,43"/>
 </map>

@@ -53,7 +53,7 @@ var searchData=
   ['lower_50',['Lower',['../class_p4_1_1_e_b_p_f_1_1_lower.html',1,'P4::EBPF']]],
   ['lowerdeparserir_51',['LowerDeparserIR',['../struct_parde_1_1_lowered_1_1_lower_deparser_i_r.html',1,'Parde::Lowered']]],
   ['loweredparsermatchallocator_52',['LoweredParserMatchAllocator',['../group__parde.html#class_lowered_parser_match_allocator',1,'']]],
-  ['lowerexpressions_53',['LowerExpressions',['../class_p4_1_1_b_m_v2_1_1_lower_expressions.html',1,'P4::BMV2::LowerExpressions'],['../class_p4_1_1_e_b_p_f_1_1_lower_expressions.html',1,'P4::EBPF::LowerExpressions']]],
+  ['lowerexpressions_53',['LowerExpressions',['../class_p4_1_1_apollo_1_1_lower_expressions.html',1,'P4::Apollo::LowerExpressions'],['../class_p4_1_1_b_m_v2_1_1_lower_expressions.html',1,'P4::BMV2::LowerExpressions'],['../class_p4_1_1_e_b_p_f_1_1_lower_expressions.html',1,'P4::EBPF::LowerExpressions']]],
   ['loweringtype_54',['LoweringType',['../group___arch_translation.html#class_b_f_n_1_1_lowering_type',1,'BFN::LoweringType'],['../group___simple_switch_translation.html#class_b_f_n_1_1_v1_1_1_lowering_type',1,'BFN::V1::LoweringType']]],
   ['lowerparser_55',['LowerParser',['../class_lower_parser.html',1,'']]],
   ['lowerparserir_56',['LowerParserIR',['../struct_parde_1_1_lowered_1_1_lower_parser_i_r.html',1,'Parde::Lowered']]],

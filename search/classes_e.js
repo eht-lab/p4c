@@ -22,7 +22,7 @@ var searchData=
   ['niltxscore_19',['NilTxScore',['../class_p_h_v_1_1v2_1_1_nil_tx_score.html',1,'PHV::v2']]],
   ['niltxscoremaker_20',['NilTxScoreMaker',['../class_p_h_v_1_1v2_1_1_nil_tx_score_maker.html',1,'PHV::v2']]],
   ['nocopack_21',['NoCoPack',['../class_p4_1_1_test_1_1_no_co_pack.html',1,'P4::Test']]],
-  ['node_22',['Node',['../class_mau_power_1_1_node.html',1,'MauPower::Node'],['../class_p4_1_1_b_m_v2_1_1_c_f_g_1_1_node.html',1,'P4::BMV2::CFG::Node'],['../class_p4_1_1_i_r_1_1_node.html',1,'P4::IR::Node']]],
+  ['node_22',['Node',['../class_mau_power_1_1_node.html',1,'MauPower::Node'],['../class_p4_1_1_apollo_1_1_c_f_g_1_1_node.html',1,'P4::Apollo::CFG::Node'],['../class_p4_1_1_b_m_v2_1_1_c_f_g_1_1_node.html',1,'P4::BMV2::CFG::Node'],['../class_p4_1_1_i_r_1_1_node.html',1,'P4::IR::Node']]],
   ['nodeandedgeset_23',['NodeAndEdgeSet',['../namespace_mau_power.html#struct_mau_power_1_1_node_and_edge_set',1,'MauPower']]],
   ['nodefinder_24',['NodeFinder',['../class_p4_1_1_p4_tools_1_1_test_1_1_node_finder.html',1,'P4::P4Tools::Test']]],
   ['nodeinfo_25',['NodeInfo',['../struct_deparse_graph_1_1_node_info.html',1,'DeparseGraph']]],

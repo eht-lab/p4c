@@ -536,189 +536,189 @@ var sectionId = 'dynsection-0';
 </a>
 </g>
 </g>
-<!-- Node46 -->
-<g id="Node000046" class="node">
-<title>Node46</title>
-<g id="a_Node000046"><a xlink:href="class_p4_1_1_switch_add_default.html" target="_top" xlink:title=" ">
+<!-- Node47 -->
+<g id="Node000047" class="node">
+<title>Node47</title>
+<g id="a_Node000047"><a xlink:href="class_p4_1_1_switch_add_default.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="371,-441 249,-441 249,-422 371,-422 371,-441"/>
 <text text-anchor="middle" x="310" y="-429" font-family="Helvetica,sans-Serif" font-size="10.00">P4::SwitchAddDefault</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node46 -->
-<g id="edge39_Node000001_Node000046" class="edge">
-<title>Node1&#45;&gt;Node46</title>
-<g id="a_edge39_Node000001_Node000046"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node47 -->
+<g id="edge39_Node000001_Node000047" class="edge">
+<title>Node1&#45;&gt;Node47</title>
+<g id="a_edge39_Node000001_Node000047"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M141.85,-737.58C147.99,-675.91 169.75,-489.85 212,-449.5 221.97,-439.98 235.26,-434.66 248.8,-431.85"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="138.33,-737.59 140.86,-747.88 145.3,-738.27 138.33,-737.59"/>
-</a>
-</g>
-</g>
-<!-- Node47 -->
-<g id="Node000047" class="node">
-<title>Node47</title>
-<g id="a_Node000047"><a xlink:href="class_p4_1_1_type_check_1_1_assign_action_arg_types.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="388,-403.5 232,-403.5 232,-373.5 388,-373.5 388,-403.5"/>
-<text text-anchor="start" x="240" y="-391.5" font-family="Helvetica,sans-Serif" font-size="10.00">P4::TypeCheck::AssignAction</text>
-<text text-anchor="middle" x="310" y="-380.5" font-family="Helvetica,sans-Serif" font-size="10.00">ArgTypes</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node47 -->
-<g id="edge40_Node000001_Node000047" class="edge">
-<title>Node1&#45;&gt;Node47</title>
-<g id="a_edge40_Node000001_Node000047"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M141.43,-737.51C146.58,-671.18 166.34,-459.88 212,-412.5 217.66,-406.63 224.51,-402.11 231.92,-398.63"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="137.91,-737.59 140.66,-747.82 144.89,-738.11 137.91,-737.59"/>
 </a>
 </g>
 </g>
 <!-- Node48 -->
 <g id="Node000048" class="node">
 <title>Node48</title>
-<g id="a_Node000048"><a xlink:href="class_p4_1_1_type_check_1_1_infer_expressions_bottom_up.html" target="_top" xlink:title="Bottom up type inferencing – set the types of expression nodes based on operands.">
-<polygon fill="white" stroke="#666666" points="397,-355.5 223,-355.5 223,-325.5 397,-325.5 397,-355.5"/>
-<text text-anchor="start" x="231" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">P4::TypeCheck::InferExpressions</text>
-<text text-anchor="middle" x="310" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">BottomUp</text>
+<g id="a_Node000048"><a xlink:href="class_p4_1_1_type_check_1_1_assign_action_arg_types.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="388,-403.5 232,-403.5 232,-373.5 388,-373.5 388,-403.5"/>
+<text text-anchor="start" x="240" y="-391.5" font-family="Helvetica,sans-Serif" font-size="10.00">P4::TypeCheck::AssignAction</text>
+<text text-anchor="middle" x="310" y="-380.5" font-family="Helvetica,sans-Serif" font-size="10.00">ArgTypes</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node48 -->
-<g id="edge41_Node000001_Node000048" class="edge">
+<g id="edge40_Node000001_Node000048" class="edge">
 <title>Node1&#45;&gt;Node48</title>
-<g id="a_edge41_Node000001_Node000048"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M140.87,-737.61C144.43,-665.55 160.23,-419.54 212,-364.5 215.21,-361.09 218.82,-358.13 222.71,-355.56"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="137.36,-737.81 140.39,-747.96 144.35,-738.13 137.36,-737.81"/>
+<g id="a_edge40_Node000001_Node000048"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M141.43,-737.51C146.58,-671.18 166.34,-459.88 212,-412.5 217.66,-406.63 224.51,-402.11 231.92,-398.63"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="137.91,-737.59 140.66,-747.82 144.89,-738.11 137.91,-737.59"/>
 </a>
 </g>
 </g>
 <!-- Node49 -->
 <g id="Node000049" class="node">
 <title>Node49</title>
-<g id="a_Node000049"><a xlink:href="class_p4_1_1_type_check_1_1_infer_expressions_top_down.html" target="_top" xlink:title="Top down type inferencing – set the type of expression nodes based on their uses.">
-<polygon fill="white" stroke="#666666" points="397,-307.5 223,-307.5 223,-277.5 397,-277.5 397,-307.5"/>
-<text text-anchor="start" x="231" y="-295.5" font-family="Helvetica,sans-Serif" font-size="10.00">P4::TypeCheck::InferExpressions</text>
-<text text-anchor="middle" x="310" y="-284.5" font-family="Helvetica,sans-Serif" font-size="10.00">TopDown</text>
+<g id="a_Node000049"><a xlink:href="class_p4_1_1_type_check_1_1_infer_expressions_bottom_up.html" target="_top" xlink:title="Bottom up type inferencing – set the types of expression nodes based on operands.">
+<polygon fill="white" stroke="#666666" points="397,-355.5 223,-355.5 223,-325.5 397,-325.5 397,-355.5"/>
+<text text-anchor="start" x="231" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">P4::TypeCheck::InferExpressions</text>
+<text text-anchor="middle" x="310" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">BottomUp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node49 -->
-<g id="edge42_Node000001_Node000049" class="edge">
+<g id="edge41_Node000001_Node000049" class="edge">
 <title>Node1&#45;&gt;Node49</title>
-<g id="a_edge42_Node000001_Node000049"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M140.43,-737.72C142.53,-660.33 154.09,-379.28 212,-316.5 215.18,-313.06 218.76,-310.07 222.63,-307.49"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="136.93,-737.89 140.18,-747.97 143.93,-738.06 136.93,-737.89"/>
+<g id="a_edge41_Node000001_Node000049"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M140.87,-737.61C144.43,-665.55 160.23,-419.54 212,-364.5 215.21,-361.09 218.82,-358.13 222.71,-355.56"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="137.36,-737.81 140.39,-747.96 144.35,-738.13 137.36,-737.81"/>
 </a>
 </g>
 </g>
 <!-- Node50 -->
 <g id="Node000050" class="node">
 <title>Node50</title>
-<g id="a_Node000050"><a xlink:href="struct_parde_1_1_lowered_1_1_clear_lowered_parser_match.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="392,-259.5 228,-259.5 228,-229.5 392,-229.5 392,-259.5"/>
-<text text-anchor="start" x="236" y="-247.5" font-family="Helvetica,sans-Serif" font-size="10.00">Parde::Lowered::ClearLowered</text>
-<text text-anchor="middle" x="310" y="-236.5" font-family="Helvetica,sans-Serif" font-size="10.00">ParserMatch</text>
+<g id="a_Node000050"><a xlink:href="class_p4_1_1_type_check_1_1_infer_expressions_top_down.html" target="_top" xlink:title="Top down type inferencing – set the type of expression nodes based on their uses.">
+<polygon fill="white" stroke="#666666" points="397,-307.5 223,-307.5 223,-277.5 397,-277.5 397,-307.5"/>
+<text text-anchor="start" x="231" y="-295.5" font-family="Helvetica,sans-Serif" font-size="10.00">P4::TypeCheck::InferExpressions</text>
+<text text-anchor="middle" x="310" y="-284.5" font-family="Helvetica,sans-Serif" font-size="10.00">TopDown</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node50 -->
-<g id="edge43_Node000001_Node000050" class="edge">
+<g id="edge42_Node000001_Node000050" class="edge">
 <title>Node1&#45;&gt;Node50</title>
-<g id="a_edge43_Node000001_Node000050"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M140.08,-737.71C140.84,-655.12 147.95,-339.04 212,-268.5 216.55,-263.49 221.96,-259.45 227.87,-256.2"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="136.58,-737.74 140.01,-747.76 143.58,-737.79 136.58,-737.74"/>
+<g id="a_edge42_Node000001_Node000050"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M140.43,-737.72C142.53,-660.33 154.09,-379.28 212,-316.5 215.18,-313.06 218.76,-310.07 222.63,-307.49"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="136.93,-737.89 140.18,-747.97 143.93,-738.06 136.93,-737.89"/>
 </a>
 </g>
 </g>
 <!-- Node51 -->
 <g id="Node000051" class="node">
 <title>Node51</title>
-<g id="a_Node000051"><a xlink:href="struct_parde_1_1_lowered_1_1_merge_lowered_parser_states_1_1_right_shift_csum_mask.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="402.5,-211.5 217.5,-211.5 217.5,-181.5 402.5,-181.5 402.5,-211.5"/>
-<text text-anchor="start" x="225.5" y="-199.5" font-family="Helvetica,sans-Serif" font-size="10.00">Parde::Lowered::MergeLowered</text>
-<text text-anchor="middle" x="310" y="-188.5" font-family="Helvetica,sans-Serif" font-size="10.00">ParserStates::RightShiftCsumMask</text>
+<g id="a_Node000051"><a xlink:href="struct_parde_1_1_lowered_1_1_clear_lowered_parser_match.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="392,-259.5 228,-259.5 228,-229.5 392,-229.5 392,-259.5"/>
+<text text-anchor="start" x="236" y="-247.5" font-family="Helvetica,sans-Serif" font-size="10.00">Parde::Lowered::ClearLowered</text>
+<text text-anchor="middle" x="310" y="-236.5" font-family="Helvetica,sans-Serif" font-size="10.00">ParserMatch</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node51 -->
-<g id="edge44_Node000001_Node000051" class="edge">
+<g id="edge43_Node000001_Node000051" class="edge">
 <title>Node1&#45;&gt;Node51</title>
-<g id="a_edge44_Node000001_Node000051"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M139.79,-737.48C139.31,-649.58 141.85,-298.76 212,-220.5 215.01,-217.14 218.41,-214.22 222.09,-211.67"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="136.3,-737.71 139.87,-747.68 143.3,-737.65 136.3,-737.71"/>
+<g id="a_edge43_Node000001_Node000051"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M140.08,-737.71C140.84,-655.12 147.95,-339.04 212,-268.5 216.55,-263.49 221.96,-259.45 227.87,-256.2"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="136.58,-737.74 140.01,-747.76 143.58,-737.79 136.58,-737.74"/>
 </a>
 </g>
 </g>
 <!-- Node52 -->
 <g id="Node000052" class="node">
 <title>Node52</title>
-<g id="a_Node000052"><a xlink:href="struct_parde_1_1_lowered_1_1_merge_lowered_parser_states_1_1_right_shift_packet_r_val.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="402,-163.5 218,-163.5 218,-133.5 402,-133.5 402,-163.5"/>
-<text text-anchor="start" x="226" y="-151.5" font-family="Helvetica,sans-Serif" font-size="10.00">Parde::Lowered::MergeLowered</text>
-<text text-anchor="middle" x="310" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00">ParserStates::RightShiftPacketRVal</text>
+<g id="a_Node000052"><a xlink:href="struct_parde_1_1_lowered_1_1_merge_lowered_parser_states_1_1_right_shift_csum_mask.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="402.5,-211.5 217.5,-211.5 217.5,-181.5 402.5,-181.5 402.5,-211.5"/>
+<text text-anchor="start" x="225.5" y="-199.5" font-family="Helvetica,sans-Serif" font-size="10.00">Parde::Lowered::MergeLowered</text>
+<text text-anchor="middle" x="310" y="-188.5" font-family="Helvetica,sans-Serif" font-size="10.00">ParserStates::RightShiftCsumMask</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node52 -->
-<g id="edge45_Node000001_Node000052" class="edge">
+<g id="edge44_Node000001_Node000052" class="edge">
 <title>Node1&#45;&gt;Node52</title>
-<g id="a_edge45_Node000001_Node000052"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M139.55,-737.49C137.88,-644.85 135.67,-258.6 212,-172.5 214.99,-169.12 218.38,-166.19 222.04,-163.63"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="136.05,-737.79 139.75,-747.71 143.05,-737.65 136.05,-737.79"/>
+<g id="a_edge44_Node000001_Node000052"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M139.79,-737.48C139.31,-649.58 141.85,-298.76 212,-220.5 215.01,-217.14 218.41,-214.22 222.09,-211.67"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="136.3,-737.71 139.87,-747.68 143.3,-737.65 136.3,-737.71"/>
 </a>
 </g>
 </g>
 <!-- Node53 -->
 <g id="Node000053" class="node">
 <title>Node53</title>
-<g id="a_Node000053"><a xlink:href="struct_parde_1_1_lowered_1_1_right_shift_csum_mask.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="382,-115.5 238,-115.5 238,-85.5 382,-85.5 382,-115.5"/>
-<text text-anchor="start" x="246" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00">Parde::Lowered::RightShift</text>
-<text text-anchor="middle" x="310" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">CsumMask</text>
+<g id="a_Node000053"><a xlink:href="struct_parde_1_1_lowered_1_1_merge_lowered_parser_states_1_1_right_shift_packet_r_val.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="402,-163.5 218,-163.5 218,-133.5 402,-133.5 402,-163.5"/>
+<text text-anchor="start" x="226" y="-151.5" font-family="Helvetica,sans-Serif" font-size="10.00">Parde::Lowered::MergeLowered</text>
+<text text-anchor="middle" x="310" y="-140.5" font-family="Helvetica,sans-Serif" font-size="10.00">ParserStates::RightShiftPacketRVal</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node53 -->
-<g id="edge46_Node000001_Node000053" class="edge">
+<g id="edge45_Node000001_Node000053" class="edge">
 <title>Node1&#45;&gt;Node53</title>
-<g id="a_edge46_Node000001_Node000053"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M140.92,-737.77C145.85,-635.84 170.44,-171.81 212,-124.5 218.87,-116.68 227.85,-111.21 237.57,-107.41"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="137.42,-737.74 140.44,-747.9 144.41,-738.07 137.42,-737.74"/>
+<g id="a_edge45_Node000001_Node000053"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M139.55,-737.49C137.88,-644.85 135.67,-258.6 212,-172.5 214.99,-169.12 218.38,-166.19 222.04,-163.63"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="136.05,-737.79 139.75,-747.71 143.05,-737.65 136.05,-737.79"/>
 </a>
 </g>
 </g>
 <!-- Node54 -->
 <g id="Node000054" class="node">
 <title>Node54</title>
-<g id="a_Node000054"><a xlink:href="struct_parde_1_1_lowered_1_1_right_shift_packet_r_val.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="382,-67.5 238,-67.5 238,-37.5 382,-37.5 382,-67.5"/>
-<text text-anchor="start" x="246" y="-55.5" font-family="Helvetica,sans-Serif" font-size="10.00">Parde::Lowered::RightShift</text>
-<text text-anchor="middle" x="310" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">PacketRVal</text>
+<g id="a_Node000054"><a xlink:href="struct_parde_1_1_lowered_1_1_right_shift_csum_mask.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="382,-115.5 238,-115.5 238,-85.5 382,-85.5 382,-115.5"/>
+<text text-anchor="start" x="246" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00">Parde::Lowered::RightShift</text>
+<text text-anchor="middle" x="310" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">CsumMask</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node54 -->
-<g id="edge47_Node000001_Node000054" class="edge">
+<g id="edge46_Node000001_Node000054" class="edge">
 <title>Node1&#45;&gt;Node54</title>
-<g id="a_edge47_Node000001_Node000054"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M140.76,-737.62C145.02,-630.79 167.35,-127.74 212,-76.5 218.95,-68.52 228.1,-62.98 238,-59.17"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="137.26,-737.55 140.37,-747.68 144.25,-737.83 137.26,-737.55"/>
+<g id="a_edge46_Node000001_Node000054"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M140.92,-737.77C145.85,-635.84 170.44,-171.81 212,-124.5 218.87,-116.68 227.85,-111.21 237.57,-107.41"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="137.42,-737.74 140.44,-747.9 144.41,-738.07 137.42,-737.74"/>
 </a>
 </g>
 </g>
 <!-- Node55 -->
 <g id="Node000055" class="node">
 <title>Node55</title>
-<g id="a_Node000055"><a xlink:href="group___parser_copy_prop.html#struct_resolve_extract_saves" target="_top" xlink:title=" ">
+<g id="a_Node000055"><a xlink:href="struct_parde_1_1_lowered_1_1_right_shift_packet_r_val.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="382,-67.5 238,-67.5 238,-37.5 382,-37.5 382,-67.5"/>
+<text text-anchor="start" x="246" y="-55.5" font-family="Helvetica,sans-Serif" font-size="10.00">Parde::Lowered::RightShift</text>
+<text text-anchor="middle" x="310" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">PacketRVal</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node55 -->
+<g id="edge47_Node000001_Node000055" class="edge">
+<title>Node1&#45;&gt;Node55</title>
+<g id="a_edge47_Node000001_Node000055"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M140.76,-737.62C145.02,-630.79 167.35,-127.74 212,-76.5 218.95,-68.52 228.1,-62.98 238,-59.17"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="137.26,-737.55 140.37,-747.68 144.25,-737.83 137.26,-737.55"/>
+</a>
+</g>
+</g>
+<!-- Node56 -->
+<g id="Node000056" class="node">
+<title>Node56</title>
+<g id="a_Node000056"><a xlink:href="group___parser_copy_prop.html#struct_resolve_extract_saves" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#bfbfbf" points="369.5,-19 250.5,-19 250.5,0 369.5,0 369.5,-19"/>
 <text text-anchor="middle" x="310" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ResolveExtractSaves</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node55 -->
-<g id="edge48_Node000001_Node000055" class="edge">
-<title>Node1&#45;&gt;Node55</title>
-<g id="a_edge48_Node000001_Node000055"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node56 -->
+<g id="edge48_Node000001_Node000056" class="edge">
+<title>Node1&#45;&gt;Node56</title>
+<g id="a_edge48_Node000001_Node000056"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M140.57,-737.6C143.95,-626.15 162.88,-82.52 212,-28.5 221.87,-17.64 235.97,-11.92 250.37,-9.11"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="137.07,-737.67 140.27,-747.77 144.06,-737.87 137.07,-737.67"/>
 </a>

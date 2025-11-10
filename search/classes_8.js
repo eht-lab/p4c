@@ -108,7 +108,7 @@ var searchData=
   ['havenonheaderlargeoperandassignment_105',['HaveNonHeaderLargeOperandAssignment',['../class_p4_1_1_d_p_d_k_1_1_have_non_header_large_operand_assignment.html',1,'P4::DPDK']]],
   ['hdrfieldinfo_106',['hdrFieldInfo',['../struct_p4_1_1hdr_field_info.html',1,'P4']]],
   ['hdrlenincstop_107',['HdrLenIncStop',['../struct_parser_1_1_state_1_1_match_1_1_hdr_len_inc_stop.html',1,'Parser::State::Match']]],
-  ['headerconverter_108',['HeaderConverter',['../class_p4_1_1_b_m_v2_1_1_header_converter.html',1,'P4::BMV2']]],
+  ['headerconverter_108',['HeaderConverter',['../class_p4_1_1_apollo_1_1_header_converter.html',1,'P4::Apollo::HeaderConverter'],['../class_p4_1_1_b_m_v2_1_1_header_converter.html',1,'P4::BMV2::HeaderConverter']]],
   ['headerinfo_109',['HeaderInfo',['../struct_header_info.html',1,'']]],
   ['headermutex_110',['HeaderMutex',['../class_header_mutex.html',1,'']]],
   ['headernamemauinspector_111',['HeaderNameMauInspector',['../class_header_name_mau_inspector.html',1,'']]],

@@ -882,11 +882,67 @@ var hierarchy =
     [ "P4::ActionReplacement", "class_p4_1_1_action_replacement.html", null ],
     [ "P4::ActionSynthesisPolicy", "class_p4_1_1_action_synthesis_policy.html", [
       [ "BFN::ActionSynthesisPolicy", "class_b_f_n_1_1_action_synthesis_policy.html", null ],
+      [ "P4::Apollo::SkipControls", "class_p4_1_1_apollo_1_1_skip_controls.html", null ],
       [ "P4::BMV2::SkipControls", "class_p4_1_1_b_m_v2_1_1_skip_controls.html", null ],
       [ "P4::P4Test::SkipControls", "class_p4_1_1_p4_test_1_1_skip_controls.html", null ]
     ] ],
     [ "P4::AllocTrace", "class_p4_1_1_alloc_trace.html", null ],
     [ "P4::AnnotationSelectionPolicy", "class_p4_1_1_annotation_selection_policy.html", null ],
+    [ "P4::Apollo::Backend", "class_p4_1_1_apollo_1_1_backend.html", [
+      [ "P4::Apollo::TunaNicBackend", "class_p4_1_1_apollo_1_1_tuna_nic_backend.html", null ]
+    ] ],
+    [ "P4::Apollo::CFG::Edge", "class_p4_1_1_apollo_1_1_c_f_g_1_1_edge.html", null ],
+    [ "P4::Apollo::ConversionContext", "struct_p4_1_1_apollo_1_1_conversion_context.html", null ],
+    [ "P4::Apollo::ExternConverter", "class_p4_1_1_apollo_1_1_extern_converter.html", null ],
+    [ "P4::Apollo::FirmwareWriterGen", "struct_p4_1_1_apollo_1_1_firmware_writer_gen.html", null ],
+    [ "P4::Apollo::Helpers::CounterlikeTraits< Kind >", "struct_p4_1_1_apollo_1_1_helpers_1_1_counterlike_traits.html", null ],
+    [ "P4::Apollo::Helpers::CounterlikeTraits< Standard::CounterExtern< Standard::Arch::PSA > >", "struct_p4_1_1_apollo_1_1_helpers_1_1_counterlike_traits_3_01_standard_1_1_counter_extern_3_01_st6aa1e1d9beca59cca1f8192b2ae381ed.html", [
+      [ "P4::Apollo::Helpers::CounterlikeTraits< Standard::CounterExtern< Standard::Arch::PNA > >", "struct_p4_1_1_apollo_1_1_helpers_1_1_counterlike_traits_3_01_standard_1_1_counter_extern_3_01_st350a179cb4e2fc1b9b6b745106828881.html", null ]
+    ] ],
+    [ "P4::Apollo::Helpers::CounterlikeTraits< Standard::CounterExtern< Standard::Arch::TUNA > >", "struct_p4_1_1_apollo_1_1_helpers_1_1_counterlike_traits_3_01_standard_1_1_counter_extern_3_01_st03cb54b2e2c3d1c349884d332c19bc99.html", null ],
+    [ "P4::Apollo::Helpers::CounterlikeTraits< Standard::CounterExtern< Standard::Arch::V1MODEL > >", "struct_p4_1_1_apollo_1_1_helpers_1_1_counterlike_traits_3_01_standard_1_1_counter_extern_3_01_stc75ff8702284f5d00ace0fa4eb32db1f.html", null ],
+    [ "P4::Apollo::Helpers::CounterlikeTraits< Standard::CounterExtern< Standard::Arch::V1MODEL2020 > >", "struct_p4_1_1_apollo_1_1_helpers_1_1_counterlike_traits_3_01_standard_1_1_counter_extern_3_01_st454d9f5f3e4c0dffd60ea6702cfb49f3.html", null ],
+    [ "P4::Apollo::Helpers::CounterlikeTraits< Standard::MeterExtern< Standard::Arch::PSA > >", "struct_p4_1_1_apollo_1_1_helpers_1_1_counterlike_traits_3_01_standard_1_1_meter_extern_3_01_stane69ab82ef4be58eae84e338a3ed83c09.html", [
+      [ "P4::Apollo::Helpers::CounterlikeTraits< Standard::MeterExtern< Standard::Arch::PNA > >", "struct_p4_1_1_apollo_1_1_helpers_1_1_counterlike_traits_3_01_standard_1_1_meter_extern_3_01_stanea5b37b090f3c3ed841b50bbce61f0b3.html", null ]
+    ] ],
+    [ "P4::Apollo::Helpers::CounterlikeTraits< Standard::MeterExtern< Standard::Arch::TUNA > >", "struct_p4_1_1_apollo_1_1_helpers_1_1_counterlike_traits_3_01_standard_1_1_meter_extern_3_01_stan1b7283be85b360362ae90b2fbfed400d.html", null ],
+    [ "P4::Apollo::Helpers::CounterlikeTraits< Standard::MeterExtern< Standard::Arch::V1MODEL > >", "struct_p4_1_1_apollo_1_1_helpers_1_1_counterlike_traits_3_01_standard_1_1_meter_extern_3_01_stan4441cf19d510f83290dd301ee81071c1.html", null ],
+    [ "P4::Apollo::Helpers::CounterlikeTraits< Standard::MeterExtern< Standard::Arch::V1MODEL2020 > >", "struct_p4_1_1_apollo_1_1_helpers_1_1_counterlike_traits_3_01_standard_1_1_meter_extern_3_01_standa610b70f903f7afe76c80d3a21e8fd9.html", null ],
+    [ "P4::Apollo::JsonObjects", "class_p4_1_1_apollo_1_1_json_objects.html", null ],
+    [ "P4::Apollo::JumpLabelInfo", "struct_p4_1_1_apollo_1_1_jump_label_info.html", null ],
+    [ "P4::Apollo::MatchImplementation", "class_p4_1_1_apollo_1_1_match_implementation.html", null ],
+    [ "P4::Apollo::PortableCodeGenerator", "class_p4_1_1_apollo_1_1_portable_code_generator.html", [
+      [ "P4::Apollo::TunaCodeGenerator", "class_p4_1_1_apollo_1_1_tuna_code_generator.html", null ]
+    ] ],
+    [ "P4::Apollo::Standard::ActionProfileTraits< arch >", "struct_p4_1_1_apollo_1_1_standard_1_1_action_profile_traits.html", null ],
+    [ "P4::Apollo::Standard::ActionProfileTraits< Arch::PSA >", "struct_p4_1_1_apollo_1_1_standard_1_1_action_profile_traits_3_01_arch_1_1_p_s_a_01_4.html", [
+      [ "P4::Apollo::Standard::ActionProfileTraits< Arch::PNA >", "struct_p4_1_1_apollo_1_1_standard_1_1_action_profile_traits_3_01_arch_1_1_p_n_a_01_4.html", null ],
+      [ "P4::Apollo::Standard::ActionSelectorTraits< Arch::PSA >", "struct_p4_1_1_apollo_1_1_standard_1_1_action_selector_traits_3_01_arch_1_1_p_s_a_01_4.html", [
+        [ "P4::Apollo::Standard::ActionSelectorTraits< Arch::PNA >", "struct_p4_1_1_apollo_1_1_standard_1_1_action_selector_traits_3_01_arch_1_1_p_n_a_01_4.html", null ]
+      ] ]
+    ] ],
+    [ "P4::Apollo::Standard::ActionProfileTraits< Arch::TUNA >", "struct_p4_1_1_apollo_1_1_standard_1_1_action_profile_traits_3_01_arch_1_1_t_u_n_a_01_4.html", [
+      [ "P4::Apollo::Standard::ActionSelectorTraits< Arch::TUNA >", "struct_p4_1_1_apollo_1_1_standard_1_1_action_selector_traits_3_01_arch_1_1_t_u_n_a_01_4.html", null ]
+    ] ],
+    [ "P4::Apollo::Standard::ActionProfileTraits< Arch::V1MODEL >", "struct_p4_1_1_apollo_1_1_standard_1_1_action_profile_traits_3_01_arch_1_1_v1_m_o_d_e_l_01_4.html", [
+      [ "P4::Apollo::Standard::ActionProfileTraits< Arch::V1MODEL2020 >", "struct_p4_1_1_apollo_1_1_standard_1_1_action_profile_traits_3_01_arch_1_1_v1_m_o_d_e_l2020_01_4.html", [
+        [ "P4::Apollo::Standard::ActionSelectorTraits< Arch::V1MODEL2020 >", "struct_p4_1_1_apollo_1_1_standard_1_1_action_selector_traits_3_01_arch_1_1_v1_m_o_d_e_l2020_01_4.html", null ]
+      ] ],
+      [ "P4::Apollo::Standard::ActionSelectorTraits< Arch::V1MODEL >", "struct_p4_1_1_apollo_1_1_standard_1_1_action_selector_traits_3_01_arch_1_1_v1_m_o_d_e_l_01_4.html", null ]
+    ] ],
+    [ "P4::Apollo::Standard::ActionSelectorTraits< arch >", "struct_p4_1_1_apollo_1_1_standard_1_1_action_selector_traits.html", null ],
+    [ "P4::Apollo::Standard::CounterExtern< arch >", "struct_p4_1_1_apollo_1_1_standard_1_1_counter_extern.html", null ],
+    [ "P4::Apollo::Standard::MeterExtern< arch >", "struct_p4_1_1_apollo_1_1_standard_1_1_meter_extern.html", null ],
+    [ "P4::Apollo::Standard::RegisterTraits< arch >", "struct_p4_1_1_apollo_1_1_standard_1_1_register_traits.html", null ],
+    [ "P4::Apollo::Standard::RegisterTraits< Arch::PSA >", "struct_p4_1_1_apollo_1_1_standard_1_1_register_traits_3_01_arch_1_1_p_s_a_01_4.html", [
+      [ "P4::Apollo::Standard::RegisterTraits< Arch::PNA >", "struct_p4_1_1_apollo_1_1_standard_1_1_register_traits_3_01_arch_1_1_p_n_a_01_4.html", null ]
+    ] ],
+    [ "P4::Apollo::Standard::RegisterTraits< Arch::V1MODEL >", "struct_p4_1_1_apollo_1_1_standard_1_1_register_traits_3_01_arch_1_1_v1_m_o_d_e_l_01_4.html", [
+      [ "P4::Apollo::Standard::RegisterTraits< Arch::V1MODEL2020 >", "struct_p4_1_1_apollo_1_1_standard_1_1_register_traits_3_01_arch_1_1_v1_m_o_d_e_l2020_01_4.html", null ]
+    ] ],
+    [ "P4::Apollo::TableAttributes", "class_p4_1_1_apollo_1_1_table_attributes.html", null ],
+    [ "P4::Apollo::TunaControlConverterImpl< arch >", "class_p4_1_1_apollo_1_1_tuna_control_converter_impl.html", null ],
+    [ "P4::Apollo::V1ModelProperties", "class_p4_1_1_apollo_1_1_v1_model_properties.html", null ],
     [ "P4::AutoCompileContext", "struct_p4_1_1_auto_compile_context.html", null ],
     [ "P4::BFRT::BFRuntimeGenerator", "class_p4_1_1_b_f_r_t_1_1_b_f_runtime_generator.html", [
       [ "P4::BFRT::BFRuntimeSchemaGenerator", "class_p4_1_1_b_f_r_t_1_1_b_f_runtime_schema_generator.html", null ]
@@ -972,6 +1028,8 @@ var hierarchy =
     [ "P4::ChooseEnumRepresentation", "class_p4_1_1_choose_enum_representation.html", [
       [ "BFN::EnumOn32Bits", "group__midend.html#class_b_f_n_1_1_enum_on32_bits", null ],
       [ "BFN::PSA::PacketPathTo8Bits", "group___portable_switch_translation.html#class_b_f_n_1_1_p_s_a_1_1_packet_path_to8_bits", null ],
+      [ "P4::Apollo::EnumOn32Bits", "class_p4_1_1_apollo_1_1_enum_on32_bits.html", null ],
+      [ "P4::Apollo::TunaEnumOn32Bits", "class_p4_1_1_apollo_1_1_tuna_enum_on32_bits.html", null ],
       [ "P4::BMV2::EnumOn32Bits", "class_p4_1_1_b_m_v2_1_1_enum_on32_bits.html", null ],
       [ "P4::BMV2::PnaEnumOn32Bits", "class_p4_1_1_b_m_v2_1_1_pna_enum_on32_bits.html", null ],
       [ "P4::BMV2::PsaEnumOn32Bits", "class_p4_1_1_b_m_v2_1_1_psa_enum_on32_bits.html", null ],
@@ -1170,6 +1228,7 @@ var hierarchy =
         [ "P4::P4Tools::P4ProgramDCGCreator", "class_p4_1_1_p4_tools_1_1_p4_program_d_c_g_creator.html", null ],
         [ "P4::ReadsWrites", "class_p4_1_1_reads_writes.html", null ],
         [ "P4::RemoveComplexExpressions", "class_p4_1_1_remove_complex_expressions.html", [
+          [ "P4::Apollo::RemoveComplexExpressions", "class_p4_1_1_apollo_1_1_remove_complex_expressions.html", null ],
           [ "P4::BMV2::RemoveComplexExpressions", "class_p4_1_1_b_m_v2_1_1_remove_complex_expressions.html", null ]
         ] ],
         [ "P4::RemoveNestedStructs", "class_p4_1_1_remove_nested_structs.html", null ],
@@ -1289,6 +1348,8 @@ var hierarchy =
         [ "CompileContext< GTestOptions >", "class_compile_context.html", null ],
         [ "CompileContext< OptionsType >", "class_compile_context.html", null ],
         [ "P4::P4CContext", "class_p4_1_1_p4_c_context.html", [
+          [ "P4::P4CContextWithOptions< ApolloOptions >", "class_p4_1_1_p4_c_context_with_options.html", null ],
+          [ "P4::P4CContextWithOptions< TunaNicOptions >", "class_p4_1_1_p4_c_context_with_options.html", null ],
           [ "P4::P4CContextWithOptions< BMV2Options >", "class_p4_1_1_p4_c_context_with_options.html", null ],
           [ "P4::P4CContextWithOptions< PnaNicOptions >", "class_p4_1_1_p4_c_context_with_options.html", null ],
           [ "P4::P4CContextWithOptions< PsaSwitchOptions >", "class_p4_1_1_p4_c_context_with_options.html", null ],
@@ -1383,6 +1444,13 @@ var hierarchy =
       ] ],
       [ "MauPower::SimplePowerGraph", "class_mau_power_1_1_simple_power_graph.html", null ],
       [ "P4::AllDefinitions", "class_p4_1_1_all_definitions.html", null ],
+      [ "P4::Apollo::CFG", "class_p4_1_1_apollo_1_1_c_f_g.html", null ],
+      [ "P4::Apollo::CFG::EdgeSet", "class_p4_1_1_apollo_1_1_c_f_g_1_1_edge_set.html", null ],
+      [ "P4::Apollo::CFG::Node", "class_p4_1_1_apollo_1_1_c_f_g_1_1_node.html", [
+        [ "P4::Apollo::CFG::DummyNode", "class_p4_1_1_apollo_1_1_c_f_g_1_1_dummy_node.html", null ],
+        [ "P4::Apollo::CFG::IfNode", "class_p4_1_1_apollo_1_1_c_f_g_1_1_if_node.html", null ],
+        [ "P4::Apollo::CFG::TableNode", "class_p4_1_1_apollo_1_1_c_f_g_1_1_table_node.html", null ]
+      ] ],
       [ "P4::BMV2::CFG", "class_p4_1_1_b_m_v2_1_1_c_f_g.html", null ],
       [ "P4::BMV2::CFG::EdgeSet", "class_p4_1_1_b_m_v2_1_1_c_f_g_1_1_edge_set.html", null ],
       [ "P4::BMV2::CFG::Node", "class_p4_1_1_b_m_v2_1_1_c_f_g_1_1_node.html", [
@@ -1871,13 +1939,15 @@ var hierarchy =
       [ "P4::BMV2::V1ProgramStructure", "class_p4_1_1_b_m_v2_1_1_v1_program_structure.html", null ],
       [ "P4::PortableProgramStructure", "class_p4_1_1_portable_program_structure.html", [
         [ "P4::BMV2::PnaProgramStructure", "class_p4_1_1_b_m_v2_1_1_pna_program_structure.html", null ],
-        [ "P4::PsaProgramStructure", "class_p4_1_1_psa_program_structure.html", null ]
+        [ "P4::PsaProgramStructure", "class_p4_1_1_psa_program_structure.html", null ],
+        [ "P4::TunaProgramStructure", "class_p4_1_1_tuna_program_structure.html", null ]
       ] ],
       [ "P4::TC::PnaProgramStructure", "class_p4_1_1_t_c_1_1_pna_program_structure.html", null ]
     ] ],
     [ "P4::PushContext", "struct_p4_1_1_push_context.html", null ],
     [ "P4::RangeIter< T >", "class_p4_1_1_range_iter.html", null ],
     [ "P4::RemoveComplexExpressionsPolicy", "class_p4_1_1_remove_complex_expressions_policy.html", [
+      [ "P4::Apollo::ProcessControls", "class_p4_1_1_apollo_1_1_process_controls.html", null ],
       [ "P4::BMV2::ProcessControls", "class_p4_1_1_b_m_v2_1_1_process_controls.html", null ],
       [ "P4::DPDK::ProcessControls", "class_p4_1_1_d_p_d_k_1_1_process_controls.html", null ]
     ] ],
@@ -1894,6 +1964,7 @@ var hierarchy =
         [ "P4::AbstractSolver", "class_p4_1_1_abstract_solver.html", [
           [ "P4::P4Tools::Z3Solver", "class_p4_1_1_p4_tools_1_1_z3_solver.html", null ]
         ] ],
+        [ "P4::Apollo::CFG::Node", "class_p4_1_1_apollo_1_1_c_f_g_1_1_node.html", null ],
         [ "P4::BMV2::CFG::Node", "class_p4_1_1_b_m_v2_1_1_c_f_g_1_1_node.html", null ],
         [ "P4::Backtrack::trigger", "struct_p4_1_1_backtrack_1_1trigger.html", [
           [ "IXBar::failure", "struct_i_x_bar_1_1failure.html", null ],
@@ -2316,6 +2387,11 @@ var hierarchy =
       [ "GTestOptions", "class_g_test_options.html", null ],
       [ "P4::ParserOptions", "class_p4_1_1_parser_options.html", [
         [ "P4::CompilerOptions", "class_p4_1_1_compiler_options.html", [
+          [ "P4::Apollo::ApolloOptions", "class_p4_1_1_apollo_1_1_apollo_options.html", [
+            [ "P4::Apollo::PortableOptions", "class_p4_1_1_apollo_1_1_portable_options.html", [
+              [ "P4::Apollo::TunaNicOptions", "class_p4_1_1_apollo_1_1_tuna_nic_options.html", null ]
+            ] ]
+          ] ],
           [ "P4::BMV2::BMV2Options", "class_p4_1_1_b_m_v2_1_1_b_m_v2_options.html", [
             [ "P4::BMV2::PortableOptions", "class_p4_1_1_b_m_v2_1_1_portable_options.html", [
               [ "P4::BMV2::PnaNicOptions", "class_p4_1_1_b_m_v2_1_1_pna_nic_options.html", null ],
@@ -2497,6 +2573,11 @@ var hierarchy =
           [ "MultipleApply", "class_multiple_apply.html", null ],
           [ "MutexOverlay", "class_mutex_overlay.html", null ],
           [ "P4::AddMissingIdAnnotations", "class_p4_1_1_add_missing_id_annotations.html", null ],
+          [ "P4::Apollo::MidEnd", "class_p4_1_1_apollo_1_1_mid_end.html", [
+            [ "P4::Apollo::PortableMidEnd", "class_p4_1_1_apollo_1_1_portable_mid_end.html", [
+              [ "P4::Apollo::TunaNicMidEnd", "class_p4_1_1_apollo_1_1_tuna_nic_mid_end.html", null ]
+            ] ]
+          ] ],
           [ "P4::BMV2::MidEnd", "class_p4_1_1_b_m_v2_1_1_mid_end.html", [
             [ "P4::BMV2::PortableMidEnd", "class_p4_1_1_b_m_v2_1_1_portable_mid_end.html", [
               [ "P4::BMV2::PnaNicMidEnd", "class_p4_1_1_b_m_v2_1_1_pna_nic_mid_end.html", null ],
@@ -2908,6 +2989,22 @@ var hierarchy =
         [ "MetadataLiveRange", "class_metadata_live_range.html", null ],
         [ "NonMochaDarkFields", "class_non_mocha_dark_fields.html", null ],
         [ "P4::AnalyzeParser", "class_p4_1_1_analyze_parser.html", null ],
+        [ "P4::Apollo::ActionConverter", "class_p4_1_1_apollo_1_1_action_converter.html", null ],
+        [ "P4::Apollo::CheckUnsupported", "class_p4_1_1_apollo_1_1_check_unsupported.html", null ],
+        [ "P4::Apollo::ControlConverter< arch >", "class_p4_1_1_apollo_1_1_control_converter.html", null ],
+        [ "P4::Apollo::ConvertGlobals", "class_p4_1_1_apollo_1_1_convert_globals.html", null ],
+        [ "P4::Apollo::ConvertTunaToJson", "class_p4_1_1_apollo_1_1_convert_tuna_to_json.html", null ],
+        [ "P4::Apollo::DeparserConverter", "class_p4_1_1_apollo_1_1_deparser_converter.html", null ],
+        [ "P4::Apollo::ExpressionConverter", "class_p4_1_1_apollo_1_1_expression_converter.html", [
+          [ "P4::Apollo::TunaNicExpressionConverter", "class_p4_1_1_apollo_1_1_tuna_nic_expression_converter.html", null ]
+        ] ],
+        [ "P4::Apollo::HeaderConverter", "class_p4_1_1_apollo_1_1_header_converter.html", null ],
+        [ "P4::Apollo::ParserConverter", "class_p4_1_1_apollo_1_1_parser_converter.html", null ],
+        [ "P4::Apollo::SharedActionSelectorCheck< arch >", "class_p4_1_1_apollo_1_1_shared_action_selector_check.html", null ],
+        [ "P4::Apollo::TunaActionConverter", "class_p4_1_1_apollo_1_1_tuna_action_converter.html", null ],
+        [ "P4::Apollo::TunaControlConverterWrapper", "class_p4_1_1_apollo_1_1_tuna_control_converter_wrapper.html", null ],
+        [ "P4::Apollo::TunaDeparserConverterWrapper", "class_p4_1_1_apollo_1_1_tuna_deparser_converter_wrapper.html", null ],
+        [ "P4::Apollo::TunaParserConverterWrapper", "class_p4_1_1_apollo_1_1_tuna_parser_converter_wrapper.html", null ],
         [ "P4::ApplyOptionsPragmas", "class_p4_1_1_apply_options_pragmas.html", null ],
         [ "P4::BMV2::ActionConverter", "class_p4_1_1_b_m_v2_1_1_action_converter.html", null ],
         [ "P4::BMV2::CheckUnsupported", "class_p4_1_1_b_m_v2_1_1_check_unsupported.html", null ],
@@ -3051,7 +3148,8 @@ var hierarchy =
         [ "P4::InspectDpdkProgram", "class_p4_1_1_inspect_dpdk_program.html", null ],
         [ "P4::InspectPortableProgram", "class_p4_1_1_inspect_portable_program.html", [
           [ "P4::BMV2::InspectPnaProgram", "class_p4_1_1_b_m_v2_1_1_inspect_pna_program.html", null ],
-          [ "P4::InspectPsaProgram", "class_p4_1_1_inspect_psa_program.html", null ]
+          [ "P4::InspectPsaProgram", "class_p4_1_1_inspect_psa_program.html", null ],
+          [ "P4::InspectTunaProgram", "class_p4_1_1_inspect_tuna_program.html", null ]
         ] ],
         [ "P4::IsLikeLeftValue", "class_p4_1_1_is_like_left_value.html", null ],
         [ "P4::IsNonConstantArrayIndex", "class_p4_1_1_is_non_constant_array_index.html", null ],
@@ -3106,7 +3204,8 @@ var hierarchy =
         [ "P4::ParseDpdkArchitecture", "class_p4_1_1_parse_dpdk_architecture.html", null ],
         [ "P4::ParsePortableArchitecture", "class_p4_1_1_parse_portable_architecture.html", [
           [ "P4::BMV2::ParsePnaArchitecture", "class_p4_1_1_b_m_v2_1_1_parse_pna_architecture.html", null ],
-          [ "P4::ParsePsaArchitecture", "class_p4_1_1_parse_psa_architecture.html", null ]
+          [ "P4::ParsePsaArchitecture", "class_p4_1_1_parse_psa_architecture.html", null ],
+          [ "P4::ParseTunaArchitecture", "class_p4_1_1_parse_tuna_architecture.html", null ]
         ] ],
         [ "P4::ReadOnlyTypeInference", "class_p4_1_1_read_only_type_inference.html", null ],
         [ "P4::ReadsWrites", "class_p4_1_1_reads_writes.html", null ],
@@ -3219,6 +3318,7 @@ var hierarchy =
         [ "P4::P4V1::RemoveBuiltins", "class_p4_1_1_p4_v1_1_1_remove_builtins.html", null ],
         [ "P4::ParseAnnotations", "class_p4_1_1_parse_annotations.html", [
           [ "BFN::ParseAnnotations", "class_b_f_n_1_1_parse_annotations.html", null ],
+          [ "P4::Apollo::ParseAnnotations", "class_p4_1_1_apollo_1_1_parse_annotations.html", null ],
           [ "P4::BMV2::ParseAnnotations", "class_p4_1_1_b_m_v2_1_1_parse_annotations.html", null ],
           [ "P4::ControlPlaneAPI::ParseP4RuntimeAnnotations", "class_p4_1_1_control_plane_a_p_i_1_1_parse_p4_runtime_annotations.html", null ],
           [ "P4::TC::ParseTCAnnotations", "class_p4_1_1_t_c_1_1_parse_t_c_annotations.html", null ]
@@ -3413,6 +3513,9 @@ var hierarchy =
           [ "TransformTables", "class_transform_tables.html", null ]
         ] ],
         [ "P4::AbstractInliner< InlineList, InlineWorkList >", "class_p4_1_1_abstract_inliner.html", null ],
+        [ "P4::Apollo::ArithmeticFixup", "class_p4_1_1_apollo_1_1_arithmetic_fixup.html", null ],
+        [ "P4::Apollo::LowerExpressions", "class_p4_1_1_apollo_1_1_lower_expressions.html", null ],
+        [ "P4::Apollo::RenameUserMetadata", "class_p4_1_1_apollo_1_1_rename_user_metadata.html", null ],
         [ "P4::ApplyTypesToExpressions", "class_p4_1_1_apply_types_to_expressions.html", null ],
         [ "P4::BMV2::ArithmeticFixup", "class_p4_1_1_b_m_v2_1_1_arithmetic_fixup.html", null ],
         [ "P4::BMV2::LowerExpressions", "class_p4_1_1_b_m_v2_1_1_lower_expressions.html", null ],

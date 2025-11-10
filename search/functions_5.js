@@ -29,7 +29,7 @@ var searchData=
   ['find_5flocked_5fin_5fall_5factions_5fparam_5falloc_26',['find_locked_in_all_actions_param_alloc',['../struct_action_data_1_1_format_1_1_use.html#acda697398c4eda3cda9ee021c63ee00d',1,'ActionData::Format::Use']]],
   ['find_5fmau_5fdependency_27',['find_mau_dependency',['../struct_dependency_graph.html#a92d0f1a3b7461e23f0acc8eda0290a85',1,'DependencyGraph']]],
   ['find_5fmerge_28',['find_merge',['../class_action_bus.html#ace12b4808c4f9322a713c2aaa27dc698',1,'ActionBus']]],
-  ['find_5fobject_5fby_5fname_29',['find_object_by_name',['../class_p4_1_1_b_m_v2_1_1_json_objects.html#a6bb8559cb6e22ffe43a4e83b4434c461',1,'P4::BMV2::JsonObjects']]],
+  ['find_5fobject_5fby_5fname_29',['find_object_by_name',['../class_p4_1_1_apollo_1_1_json_objects.html#a2007cda01611c3ebe5f497b532ce80ad',1,'P4::Apollo::JsonObjects::find_object_by_name()'],['../class_p4_1_1_b_m_v2_1_1_json_objects.html#a6bb8559cb6e22ffe43a4e83b4434c461',1,'P4::BMV2::JsonObjects::find_object_by_name()']]],
   ['find_5fparam_5falloc_30',['find_param_alloc',['../struct_action_data_1_1_format_1_1_use.html#aeb98e1197b061143a07ac3d6a24e0d05',1,'ActionData::Format::Use']]],
   ['find_5fpath_31',['find_path',['../struct_flow_graph.html#aba1381fd65b6cddb4a9bd5467a439850',1,'FlowGraph']]],
   ['findcontext_32',['findContext',['../group__midend.html#ga5519749268c3acb04a84b3c326bc7541',1,'BFN']]],

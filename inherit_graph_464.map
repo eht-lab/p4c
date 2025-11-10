@@ -1,3 +1,25 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$class_p4_1_1_control_plane_a_p_i_1_1_p4_runtime_analyzer.html" title=" " alt="" coords="5,5,164,45"/>
+<area shape="rect" id="Node000000" href="$class_p4_1_1_choose_enum_representation.html" title=" " alt="" coords="5,252,236,277"/>
+<area shape="rect" id="Node000001" href="$group__midend.html#class_b_f_n_1_1_enum_on32_bits" title="Class that implements a policy suitable for the ConvertEnums pass." alt="" coords="318,5,471,31"/>
+<area shape="poly" id="edge2344_Node000000_Node000001" title=" " alt="" coords="131,238,152,194,186,140,229,86,255,61,283,40,316,25,319,30,285,44,258,65,233,89,190,143,157,197,135,241"/>
+<area shape="rect" id="Node000002" href="$group___portable_switch_translation.html#class_b_f_n_1_1_p_s_a_1_1_packet_path_to8_bits" title=" " alt="" coords="291,55,499,80"/>
+<area shape="poly" id="edge2345_Node000000_Node000002" title=" " alt="" coords="135,239,160,205,194,164,235,123,283,89,309,78,311,83,285,94,239,127,198,167,164,208,140,242"/>
+<area shape="rect" id="Node000003" href="$class_p4_1_1_apollo_1_1_enum_on32_bits.html" title=" " alt="" coords="299,104,490,129"/>
+<area shape="poly" id="edge2346_Node000000_Node000003" title=" " alt="" coords="142,240,203,189,241,161,283,138,314,127,316,132,285,143,244,166,206,193,146,244"/>
+<area shape="rect" id="Node000004" href="$class_p4_1_1_apollo_1_1_tuna_enum_on32_bits.html" title=" " alt="" coords="284,153,505,179"/>
+<area shape="poly" id="edge2347_Node000000_Node000004" title=" " alt="" coords="156,243,215,215,283,187,324,176,325,181,285,193,217,220,159,248"/>
+<area shape="rect" id="Node000005" href="$class_p4_1_1_b_m_v2_1_1_enum_on32_bits.html" title=" " alt="" coords="301,203,489,228"/>
+<area shape="poly" id="edge2348_Node000000_Node000005" title=" " alt="" coords="205,247,323,225,324,231,206,252"/>
+<area shape="rect" id="Node000006" href="$class_p4_1_1_b_m_v2_1_1_pna_enum_on32_bits.html" title=" " alt="" coords="289,252,501,277"/>
+<area shape="poly" id="edge2349_Node000000_Node000006" title=" " alt="" coords="250,262,288,262,288,267,250,267"/>
+<area shape="rect" id="Node000007" href="$class_p4_1_1_b_m_v2_1_1_psa_enum_on32_bits.html" title=" " alt="" coords="289,301,500,327"/>
+<area shape="poly" id="edge2350_Node000000_Node000007" title=" " alt="" coords="206,277,324,299,323,304,205,282"/>
+<area shape="rect" id="Node000008" href="$class_p4_1_1_d_p_d_k_1_1_enum_on32_bits.html" title=" " alt="" coords="301,351,488,376"/>
+<area shape="poly" id="edge2351_Node000000_Node000008" title=" " alt="" coords="159,281,217,309,285,335,329,348,328,353,283,341,215,314,157,286"/>
+<area shape="rect" id="Node000009" href="$class_p4_1_1_e_b_p_f_1_1_enum_on32_bits.html" title=" " alt="" coords="303,400,486,425"/>
+<area shape="poly" id="edge2352_Node000000_Node000009" title=" " alt="" coords="146,285,206,336,245,362,285,385,320,397,318,402,283,390,242,367,203,340,143,289"/>
+<area shape="rect" id="Node000010" href="$class_p4_1_1_enum_on32_bits.html" title=" " alt="" coords="323,449,466,475"/>
+<area shape="poly" id="edge2353_Node000000_Node000010" title=" " alt="" coords="140,287,164,321,198,361,239,401,285,434,324,450,322,455,283,439,235,405,194,365,160,324,135,290"/>
+<area shape="rect" id="Node000011" href="$class_p4_1_1_u_b_p_f_1_1_enum_on32_bits.html" title=" " alt="" coords="303,499,487,524"/>
+<area shape="poly" id="edge2354_Node000000_Node000011" title=" " alt="" coords="136,289,158,332,191,385,233,439,258,463,285,484,311,496,308,501,283,488,255,467,229,443,186,388,153,335,131,292"/>
 </map>
