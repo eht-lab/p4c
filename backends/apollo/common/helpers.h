@@ -114,7 +114,7 @@ template <>
 struct ActionProfileTraits<Arch::TUNA> {
     static const cstring name() { return "action profile"_cs; }
     static const cstring propertyName() { return "implementation"_cs; }
-    static const cstring typeName() { return "TunaActionProfile"_cs; }
+    static const cstring typeName() { return "ActionProfile"_cs; }
     static const cstring sizeParamName() { return "size"_cs; }
 };
 
@@ -144,7 +144,7 @@ struct ActionSelectorTraits<Arch::PNA> : public ActionSelectorTraits<Arch::PSA> 
 template <>
 struct ActionSelectorTraits<Arch::TUNA> : public ActionProfileTraits<Arch::TUNA> {
     static const cstring name() { return "action selector"_cs; }
-    static const cstring typeName() { return "TunaActionSelector"_cs; }
+    static const cstring typeName() { return "ActionSelector"_cs; }
 };
 
 /// Traits for the register extern, must be specialized for v1model and PSA.

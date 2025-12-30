@@ -355,7 +355,7 @@ void ExpressionConverter::postorder(const IR::Member *expression) {
         auto mem = expression->expr->to<IR::Member>();
         auto memtype = typeMap->getType(mem->expr, true);
         if (memtype->is<IR::Type_Stack>() && mem->member == IR::Type_Stack::next)
-            ::P4::error(ErrorType::ERR_UNINITIALIZED, "%1% uninitialized: next field read", mem);
+            ::P4::warning(ErrorType::WARN_UNINITIALIZED, "%1% uninitialized: next field read", mem);
         // array.last.field => type: "stack_field", value: [ array, field ]
         if (memtype->is<IR::Type_Stack>() && mem->member == IR::Type_Stack::last) {
             auto l = get(mem->expr);

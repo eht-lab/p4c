@@ -16,7 +16,6 @@ limitations under the License.
 
 #include "extern.h"
 
-#include "frontends/p4-14/fromv1.0/v1model.h"
 #include "lib/json.h"
 
 namespace P4::Apollo {
@@ -127,7 +126,7 @@ Util::IJson *ExternConverter::convertExternFunction(ConversionContext *ctxt,
 }
 
 void ExternConverter::modelError(const char *format, const IR::Node *node) const {
-    cstring errMsg = cstring(format) + ". Are you using an up-to-date v1model.p4?";
+    cstring errMsg = cstring(format) + ". Are you using an up-to-date tuna.p4?";
     ::P4::error(ErrorType::ERR_MODEL, errMsg.c_str(), node);
 }
 
@@ -222,14 +221,18 @@ cstring ExternConverter::createCalculation(ConversionContext *ctxt, cstring algo
 }
 
 cstring ExternConverter::convertHashAlgorithm(cstring algorithm) {
-    if (algorithm == P4V1::V1Model::instance.algorithm.crc32.name) return "crc32"_cs;
-    if (algorithm == P4V1::V1Model::instance.algorithm.crc32_custom.name) return "crc32_custom"_cs;
-    if (algorithm == P4V1::V1Model::instance.algorithm.crc16.name) return "crc16"_cs;
-    if (algorithm == P4V1::V1Model::instance.algorithm.crc16_custom.name) return "crc16_custom"_cs;
-    if (algorithm == P4V1::V1Model::instance.algorithm.random.name) return "random"_cs;
-    if (algorithm == P4V1::V1Model::instance.algorithm.identity.name) return "identity"_cs;
-    if (algorithm == P4V1::V1Model::instance.algorithm.csum16.name) return "csum16"_cs;
-    if (algorithm == P4V1::V1Model::instance.algorithm.xor16.name) return "xor16"_cs;
+    // This function expects normalized algorithm names (lowercase)
+    // Architecture-specific converters (PortableCodeGenerator, etc.) should
+    // convert their specific enum names to these normalized names first.
+
+    // Common hash algorithms (normalized lowercase names)
+    if (algorithm == "crc16" || algorithm == "crc32" || algorithm == "crc32_custom" ||
+        algorithm == "crc16_custom" || algorithm == "random" || algorithm == "identity" ||
+        algorithm == "csum16" || algorithm == "xor16" || algorithm == "xor4" ||
+        algorithm == "xor8" || algorithm == "xor32" || algorithm == "toeplitz" ||
+        algorithm == "csum" || algorithm == "crc32_1edc6f41") {
+        return algorithm;
+    }
 
     ::P4::error(ErrorType::ERR_UNSUPPORTED, "Unsupported algorithm %1%", algorithm);
     return cstring::empty;

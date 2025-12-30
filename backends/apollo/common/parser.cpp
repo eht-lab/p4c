@@ -206,8 +206,7 @@ Util::IJson *ParserConverter::convertParserStatement(const IR::StatOrDecl *stat)
                     // The spec says that this must always be wrapped in an expression.
                     // However, calling convert with the third argument set to 'true'
                     // does not do that.
-                    auto jexpr =
-                        ctxt->conv->convert(arg2->expression, true, false);
+                    auto jexpr = ctxt->conv->convert(arg2->expression, true, false);
                     auto rwrap = new Util::JsonObject();
                     rwrap->emplace("type", "expression");
                     rwrap->emplace("value", jexpr);

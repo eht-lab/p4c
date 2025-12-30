@@ -164,18 +164,101 @@ void PortableCodeGenerator::createScalars(ConversionContext *ctxt,
 
 void PortableCodeGenerator::createHeaders(ConversionContext *ctxt,
                                           P4::PortableProgramStructure *structure) {
+    // 1. add headers
     for (auto kv : structure->headers) {
         auto type = kv.second->type->to<IR::Type_StructLike>();
         ctxt->json->add_header(type->controlPlaneName(), kv.second->name);
     }
+
+    // add variable_headers
+    for (auto kv : structure->variable_headers) {
+        auto type = kv.second->type->to<IR::Type_StructLike>();
+        ctxt->json->add_header(type->controlPlaneName(), kv.second->name, true);
+    }
+
+    // 2. add metadata
     for (auto kv : structure->metadata) {
         auto type = kv.second->type->to<IR::Type_StructLike>();
         ctxt->json->add_metadata(type->controlPlaneName(), kv.second->name);
     }
-    /* TODO */
-    // for (auto kv : header_stacks) {
-    //     json->add_header_stack(stack_type, stack_name, stack_size, ids);
-    // }
+
+    // add variable metadata
+    for (auto kv : structure->variable_metadata) {
+        auto type = kv.second->type->to<IR::Type_StructLike>();
+        ctxt->json->add_metadata(type->controlPlaneName(), kv.second->name, true);
+    }
+
+    // 3. add header stacks
+    for (auto kv : structure->header_stacks) {
+        auto stack_name = kv.first;
+        auto stack_decl = kv.second;
+        auto stack_type_ir = stack_decl->type->to<IR::Type_Stack>();
+
+        if (stack_type_ir == nullptr) {
+            ::P4::error(ErrorType::ERR_TYPE_ERROR, "%1%: expected a stack type", stack_decl);
+            continue;
+        }
+
+        auto element_type = structure->typeMap->getTypeType(stack_type_ir->elementType, true);
+        auto ht = element_type->to<IR::Type_Header>();
+
+        if (ht == nullptr) {
+            ::P4::error(ErrorType::ERR_TYPE_ERROR, "%1%: stack element must be a header type",
+                        stack_type_ir->elementType);
+            continue;
+        }
+
+        cstring header_type = ht->controlPlaneName();
+        unsigned stack_size = stack_type_ir->getSize();
+        std::vector<unsigned> header_ids;
+
+        // add header instance for each element in stack
+        for (unsigned i = 0; i < stack_size; i++) {
+            cstring hdrName = stack_name + "[" + Util::toString(i) + "]";
+            unsigned id = ctxt->json->add_header(header_type, hdrName);
+            header_ids.push_back(id);
+        }
+
+        // add header stack to JSON
+        ctxt->json->add_header_stack(header_type, stack_name, stack_size, header_ids);
+    }
+
+    // add variable header stacks
+    for (auto kv : structure->variable_header_stacks) {
+        auto stack_name = kv.first;
+        auto stack_decl = kv.second;
+        auto stack_type_ir = stack_decl->type->to<IR::Type_Stack>();
+
+        if (stack_type_ir == nullptr) {
+            ::P4::error(ErrorType::ERR_TYPE_ERROR, "%1%: expected a stack type", stack_decl);
+            continue;
+        }
+
+        auto element_type = structure->typeMap->getTypeType(stack_type_ir->elementType, true);
+        auto ht = element_type->to<IR::Type_Header>();
+
+        if (ht == nullptr) {
+            ::P4::error(ErrorType::ERR_TYPE_ERROR, "%1%: stack element must be a header type",
+                        stack_type_ir->elementType);
+            continue;
+        }
+
+        cstring header_type = ht->controlPlaneName();
+        unsigned stack_size = stack_type_ir->getSize();
+        std::vector<unsigned> header_ids;
+
+        // add header instance for each element in stack
+        for (unsigned i = 0; i < stack_size; i++) {
+            cstring hdrName = stack_name + "[" + Util::toString(i) + "]";
+            unsigned id = ctxt->json->add_header(header_type, hdrName, true);
+            header_ids.push_back(id);
+        }
+
+        // add header stack to JSON
+        ctxt->json->add_header_stack(header_type, stack_name, stack_size, header_ids);
+    }
+
+    // 4. add header unions
     for (auto kv : structure->header_unions) {
         auto header_name = kv.first;
         auto header_type = kv.second->type->to<IR::Type_StructLike>()->controlPlaneName();
@@ -188,6 +271,24 @@ void PortableCodeGenerator::createHeaders(ConversionContext *ctxt,
             auto h_name = header_name + "." + uf->controlPlaneName();
             auto h_type = uft->to<IR::Type_StructLike>()->controlPlaneName();
             unsigned id = ctxt->json->add_header(h_type, h_name);
+            fields->append(id);
+        }
+        ctxt->json->add_union(header_type, fields, header_name);
+    }
+
+    // add variable header unions
+    for (auto kv : structure->variable_header_unions) {
+        auto header_name = kv.first;
+        auto header_type = kv.second->type->to<IR::Type_StructLike>()->controlPlaneName();
+        // We have to add separately a header instance for all
+        // headers in the union.  Each instance will be named with
+        // a prefix including the union name, e.g., "u.h"
+        Util::JsonArray *fields = new Util::JsonArray();
+        for (auto uf : kv.second->type->to<IR::Type_HeaderUnion>()->fields) {
+            auto uft = structure->typeMap->getType(uf, true);
+            auto h_name = header_name + "." + uf->controlPlaneName();
+            auto h_type = uft->to<IR::Type_StructLike>()->controlPlaneName();
+            unsigned id = ctxt->json->add_header(h_type, h_name, true);
             fields->append(id);
         }
         ctxt->json->add_union(header_type, fields, header_name);
@@ -223,6 +324,7 @@ void PortableCodeGenerator::createGlobals() {
 }
 
 cstring PortableCodeGenerator::convertHashAlgorithm(cstring algo) {
+    // Support v1model style (uppercase)
     if (algo == "CRC16") {
         return "crc16"_cs;
     }
@@ -243,6 +345,13 @@ cstring PortableCodeGenerator::convertHashAlgorithm(cstring algo) {
         return "crc16"_cs;
     }
 
+    // Support tuna/PNA style (lowercase) - pass through as-is
+    if (algo == "crc16" || algo == "crc32" || algo == "crc32_1edc6f41" || algo == "xor4" ||
+        algo == "xor8" || algo == "xor16" || algo == "xor32" || algo == "toeplitz" ||
+        algo == "csum") {
+        return algo;
+    }
+
     return nullptr;
 }
 
@@ -258,8 +367,7 @@ ExternConverter_Digest ExternConverter_Digest::singleton;
 Util::IJson *ExternConverter_Counter::convertExternObject(ConversionContext *ctxt,
                                                           const P4::ExternMethod *em,
                                                           const IR::MethodCallExpression *mc,
-                                                          const IR::StatOrDecl *s,
-                                                          const bool &) {
+                                                          const IR::StatOrDecl *s, const bool &) {
     if (mc->arguments->size() != 1) {
         modelError("Expected 1 argument for %1%", mc);
         return nullptr;
@@ -387,8 +495,7 @@ Util::IJson *ExternConverter_Digest::convertExternObject(UNUSED ConversionContex
 
 void ExternConverter_Counter::convertExternInstance(ConversionContext *ctxt,
                                                     const IR::Declaration *c,
-                                                    const IR::ExternBlock *eb,
-                                                    const bool &) {
+                                                    const IR::ExternBlock *eb, const bool &) {
     auto inst = c->to<IR::Declaration_Instance>();
     cstring name = inst->controlPlaneName();
     auto sz = eb->findParameterValue("n_counters"_cs);
@@ -456,7 +563,7 @@ void ExternConverter_Counter::convertExternInstance(ConversionContext *ctxt,
         auto indexMode = eb->findParameterValue("index_mode"_cs);
         if (!indexMode || !indexMode->is<IR::Declaration_ID>()) {
             modelError("%1%: expected a declaration_id for index_mode",
-                      indexMode ? indexMode->getNode() : eb->getNode());
+                       indexMode ? indexMode->getNode() : eb->getNode());
             return;
         }
         auto arg3 = indexMode->to<IR::Declaration_ID>();

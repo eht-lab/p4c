@@ -1,6 +1,7 @@
 #include "options.h"
 
 #include "frontends/common/parser_options.h"
+#include "lib/error_reporter.h"
 #include "lib/exename.h"
 
 namespace P4::Apollo {
@@ -23,6 +24,12 @@ std::vector<const char *> *TunaNicOptions::process(int argc, char *const argv[])
         executablePath.c_str());
 
     auto remainingOptions = CompilerOptions::process(argc, argv);
+
+    // set uninitialized var as warnings
+    TunaNicContext::get().setDiagnosticAction("uninitialized"_cs, DiagnosticAction::Warn);
+    TunaNicContext::get().setDiagnosticAction("uninitialized_use"_cs, DiagnosticAction::Warn);
+    TunaNicContext::get().setDiagnosticAction("uninitialized_out_param"_cs, DiagnosticAction::Warn);
+
     return remainingOptions;
 }
 

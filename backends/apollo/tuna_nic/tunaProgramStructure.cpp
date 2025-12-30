@@ -51,14 +51,25 @@ void InspectTunaProgram::addHeaderType(const IR::Type_StructLike *st) {
     }
 }
 
-void InspectTunaProgram::addHeaderInstance(const IR::Type_StructLike *st, cstring name) {
+void InspectTunaProgram::addHeaderInstance(const IR::Type_StructLike *st, cstring name,
+                                           bool variable) {
     auto inst = new IR::Declaration_Variable(name, st);
-    if (st->is<IR::Type_Header>())
-        pinfo->headers.emplace(name, inst);
-    else if (st->is<IR::Type_Struct>())
-        pinfo->metadata.emplace(name, inst);
-    else if (st->is<IR::Type_HeaderUnion>())
-        pinfo->header_unions.emplace(name, inst);
+    if (st->is<IR::Type_Header>()) {
+        if (!variable)
+            pinfo->headers.emplace(name, inst);
+        else
+            pinfo->variable_headers.emplace(name, inst);
+    } else if (st->is<IR::Type_Struct>()) {
+        if (!variable)
+            pinfo->metadata.emplace(name, inst);
+        else
+            pinfo->variable_metadata.emplace(name, inst);
+    } else if (st->is<IR::Type_HeaderUnion>()) {
+        if (!variable)
+            pinfo->header_unions.emplace(name, inst);
+        else
+            pinfo->variable_header_unions.emplace(name, inst);
+    }
 }
 
 void InspectTunaProgram::addTypesAndInstances(const IR::Type_StructLike *type, bool isHeader) {
@@ -107,22 +118,23 @@ void InspectTunaProgram::addTypesAndInstances(const IR::Type_StructLike *type, b
         } else if (ft->is<IR::Type_Stack>()) {
             LOG5("Field is Type_Stack " << ft->toString());
             auto stack = ft->to<IR::Type_Stack>();
-            // auto stack_name = f->controlPlaneName();
-            auto stack_size = stack->getSize();
+            auto stack_name = f->controlPlaneName();
+            // auto stack_size = stack->getSize();
             auto type = typeMap->getTypeType(stack->elementType, true);
             BUG_CHECK(type->is<IR::Type_Header>(), "%1% not a header type", stack->elementType);
             auto ht = type->to<IR::Type_Header>();
             addHeaderType(ht);
-            auto stack_type = stack->elementType->to<IR::Type_Header>();
-            std::vector<unsigned> ids;
-            for (unsigned i = 0; i < stack_size; i++) {
-                cstring hdrName = f->controlPlaneName() + "[" + Util::toString(i) + "]";
-                /* TODO */
-                // auto id = json->add_header(stack_type, hdrName);
-                addHeaderInstance(stack_type, hdrName);
-                // ids.push_back(id);
-            }
-            // addHeaderStackInstance();
+
+            // add stack itself to header_stacks container
+            auto stack_decl = new IR::Declaration_Variable(stack_name, stack);
+            pinfo->header_stacks.emplace(stack_name, stack_decl);
+
+            // don't add header instances here, they should be added in createHeaders
+            // they should be added in createHeaders in the generation stage
+            // for (unsigned i = 0; i < stack_size; i++) {
+            //     cstring hdrName = f->controlPlaneName() + "[" + Util::toString(i) + "]";
+            //     addHeaderInstance(stack_type, hdrName);
+            // }
         } else {
             // Treat this field like a scalar local variable
             cstring newName = refMap->newName(type->getName() + "." + f->name);
@@ -162,14 +174,88 @@ void InspectTunaProgram::addTypesAndInstances(const IR::Type_StructLike *type, b
 
 bool InspectTunaProgram::preorder(const IR::Declaration_Variable *dv) {
     auto ft = typeMap->getType(dv->getNode(), true);
-    cstring scalarsName = refMap->newName("scalars");
 
     if (ft->is<IR::Type_Bits>()) {
+        cstring scalarsName = refMap->newName("scalars");
         LOG5("Adding " << dv << " into scalars map");
         pinfo->scalars.emplace(scalarsName, dv);
     } else if (ft->is<IR::Type_Boolean>()) {
+        cstring scalarsName = refMap->newName("scalars");
         LOG5("Adding " << dv << " into scalars map");
         pinfo->scalars.emplace(scalarsName, dv);
+    } else if (ft->is<IR::Type_Header>()) {
+        LOG5("Adding header variable " << dv->name << " to headers");
+        auto header_type = ft->to<IR::Type_Header>();
+        addHeaderType(header_type);
+        addHeaderInstance(header_type, dv->name, true);
+    } else if (ft->is<IR::Type_Struct>()) {
+        LOG5("Adding struct variable " << dv->name << " to metadata");
+        auto struct_type = ft->to<IR::Type_Struct>();
+        addHeaderType(struct_type);
+        addHeaderInstance(struct_type, dv->name, true);
+    } else if (ft->is<IR::Type_Stack>()) {
+        LOG5("Adding local stack variable " << dv->name);
+        auto stack = ft->to<IR::Type_Stack>();
+        // auto stack_size = stack->getSize();
+        auto type = typeMap->getTypeType(stack->elementType, true);
+        BUG_CHECK(type->is<IR::Type_Header>(), "%1% not a header type", stack->elementType);
+        auto ht = type->to<IR::Type_Header>();
+        addHeaderType(ht);
+        // add stack to header_stacks container
+        auto stack_decl = new IR::Declaration_Variable(dv->name, stack);
+        // pinfo->header_stacks.emplace(dv->name, stack_decl);
+        pinfo->variable_header_stacks.emplace(dv->name, stack_decl);
+    } else if (ft->is<IR::Type_HeaderUnion>()) {
+        // add header union variable to header_unions container
+        LOG5("Adding header union variable " << dv->name << " to header_unions");
+        auto union_type = ft->to<IR::Type_HeaderUnion>();
+        addHeaderType(union_type);
+
+        // add header type for each header in union
+        for (auto uf : union_type->fields) {
+            auto uft = typeMap->getType(uf, true);
+            if (auto h_type = uft->to<IR::Type_Header>()) {
+                addHeaderType(h_type);
+            }
+        }
+
+        // add union to header_unions container
+        auto union_decl = new IR::Declaration_Variable(dv->name, union_type);
+        // pinfo->header_unions.emplace(dv->name, union_decl);
+        pinfo->variable_header_unions.emplace(dv->name, union_decl);
+    } else if (ft->is<IR::Type_Error>()) {
+        // add error variable to scalars container
+        cstring scalarsName = refMap->newName("scalars");
+        LOG5("Adding error variable " << dv->name << " to scalars");
+        pinfo->scalars.emplace(scalarsName, dv);
+    } else if (ft->is<IR::Type_Enum>()) {
+        // add enum variable to scalars container
+        cstring scalarsName = refMap->newName("scalars");
+        LOG5("Adding enum variable " << dv->name << " to scalars");
+        pinfo->scalars.emplace(scalarsName, dv);
+    } else if (ft->is<IR::Type_Varbits>()) {
+        // add varbit variable to scalars container
+        // similar to BMv2, synthesize a header type for varbit
+        LOG5("Adding varbit variable " << dv->name);
+        auto vbt = ft->to<IR::Type_Varbits>();
+        cstring headerName = "$varbit" + Util::toString(vbt->size);
+
+        // create a header type with a single varbit field
+        auto vec = new IR::IndexedVector<IR::StructField>();
+        auto sf = new IR::StructField("field", ft);
+        vec->push_back(sf);
+        typeMap->setType(sf, ft);
+        auto hdrType = new IR::Type_Header(headerName, *vec);
+        typeMap->setType(hdrType, hdrType);
+
+        addHeaderType(hdrType);
+        addHeaderInstance(hdrType, dv->name);
+    } else if (ft->is<IR::Type_Set>()) {
+        // ignore: this is probably a value_set
+        LOG5("Ignoring Type_Set variable " << dv->name);
+    } else {
+        // other unhandled types, output bug
+        BUG("%1%: local variable of type %2% may not be fully supported", dv, ft);
     }
 
     return false;

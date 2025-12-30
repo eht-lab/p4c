@@ -105,7 +105,7 @@ class InspectTunaProgram : public InspectPortableProgram {
 
     void addTypesAndInstances(const IR::Type_StructLike *type, bool meta);
     void addHeaderType(const IR::Type_StructLike *st);
-    void addHeaderInstance(const IR::Type_StructLike *st, cstring name);
+    void addHeaderInstance(const IR::Type_StructLike *st, cstring name, bool variable = false);
     bool preorder(const IR::Declaration_Variable *dv) override;
     bool preorder(const IR::Parameter *parameter) override;
 };

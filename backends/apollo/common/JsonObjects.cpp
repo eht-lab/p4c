@@ -178,7 +178,7 @@ void JsonObjects::add_header_field(const cstring &name, Util::JsonArray *&field)
     fields->append(field);
 }
 
-unsigned JsonObjects::add_header(const cstring &type, const cstring &name) {
+unsigned JsonObjects::add_header(const cstring &type, const cstring &name, bool variable) {
     auto header = new Util::JsonObject();
     unsigned id = Apollo::nextId("headers"_cs);
     LOG1("add header id " << id);
@@ -187,6 +187,10 @@ unsigned JsonObjects::add_header(const cstring &type, const cstring &name) {
     header->emplace("header_type", type);
     header->emplace("metadata", false);
     header->emplace("pi_omit", true);
+    if (!variable)
+        header->emplace("variable", false);
+    else
+        header->emplace("variable", true);
     headers->append(header);
     return id;
 }
@@ -205,7 +209,7 @@ unsigned JsonObjects::add_union(const cstring &type, Util::JsonArray *&headers,
     return id;
 }
 
-unsigned JsonObjects::add_metadata(const cstring &type, const cstring &name) {
+unsigned JsonObjects::add_metadata(const cstring &type, const cstring &name, bool variable) {
     auto header = new Util::JsonObject();
     unsigned id = Apollo::nextId("headers"_cs);
     LOG3("add metadata header id " << id);
@@ -214,6 +218,10 @@ unsigned JsonObjects::add_metadata(const cstring &type, const cstring &name) {
     header->emplace("header_type", type);
     header->emplace("metadata", true);
     header->emplace("pi_omit", true);  // Don't expose in PI.
+    if (!variable)
+        header->emplace("variable", false);
+    else
+        header->emplace("variable", true);
     headers->append(header);
     return id;
 }

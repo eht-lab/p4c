@@ -76,14 +76,16 @@ class JsonObjects {
     /// @brief Creates a header instance in JSON.
     /// @param type The type of the header.
     /// @param name The name of the header instance.
+    /// @param variable Header is variable of not.
     /// @return The ID of the newly created header instance.
-    unsigned add_header(const cstring &type, const cstring &name);
+    unsigned add_header(const cstring &type, const cstring &name, bool variable = false);
 
     /// @brief Creates a metadata header instance in JSON.
     /// @param type The type of the metadata.
     /// @param name The name of the metadata header instance.
+    /// @param variable Metadata is variable of not.
     /// @return The ID of the newly created metadata header instance.
-    unsigned add_metadata(const cstring &type, const cstring &name);
+    unsigned add_metadata(const cstring &type, const cstring &name, bool variable = false);
 
     /// @brief Adds a header stack to the JSON representation.
     /// @param type The type of the headers in the stack.

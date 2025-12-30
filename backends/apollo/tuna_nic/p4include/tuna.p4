@@ -20,6 +20,14 @@ limitations under the License.
  *   P4-16 declaration of the Tunic Architecture
  */
 
+// Match kinds beyond the core P4 match kinds (exact, ternary, lpm)
+match_kind {
+    // Either an exact match, or a wildcard (matching any value).
+    optional,
+    // Used for implementing dynamic_action_selection
+    selector
+}
+
 /**********************************************************************
  * Beginning of the part of this target-customized tna.p4 include file
  * that declares data plane widths for one particular target device.
@@ -49,13 +57,13 @@ typedef bit<8>  ClassOfServiceUint_t;
 typedef bit<16> EgressInstanceUint_t;
 typedef bit<64> TimestampUint_t;
 
-type PortIdUint_t         PortId_t;
-type PacketLengthUint_t   PacketLength_t;
-type MulticastGroupUint_t MulticastGroup_t;
-type CloneSessionIdUint_t CloneSessionId_t;
-type ClassOfServiceUint_t ClassOfService_t;
-type EgressInstanceUint_t EgressInstance_t;
-type TimestampUint_t      Timestamp_t;
+typedef PortIdUint_t         PortId_t;
+typedef PacketLengthUint_t   PacketLength_t;
+typedef MulticastGroupUint_t MulticastGroup_t;
+typedef CloneSessionIdUint_t CloneSessionId_t;
+typedef ClassOfServiceUint_t ClassOfService_t;
+typedef EgressInstanceUint_t EgressInstance_t;
+typedef TimestampUint_t      Timestamp_t;
 typedef error   ParserError_t;
 
 const PortId_t TUNA_PORT_RECIRCULATE = (PortId_t) 0xfffffffa;
@@ -144,6 +152,7 @@ struct tuna_ingress_input_metadata_t  {
   TUNA_PacketPath_t  packet_path;
   PacketLength_t     packet_length;
   bit<3>             recircle_timestamp;
+  bit<1>             checksum_success;
   PortId_t           ingress_port;
   Timestamp_t        ingress_timestamp;
 }
@@ -153,9 +162,11 @@ struct tuna_egress_input_metadata_t  {
   PacketLength_t     packet_length;
   bit<3>             recircle_timestamp;
   ClassOfService_t   class_of_service;
+  bit<1>             checksum_success;
   PortId_t           egress_port;
   EgressInstance_t   instance;       /// instance comes from the PacketReplicationEngine
   Timestamp_t        egress_timestamp;
+  bit<4>             chan_id;
 }
 // END:Metadata_ingress_input
 
@@ -165,12 +176,16 @@ struct tuna_ingress_output_metadata_t  {
     bit<14> len;              // 0~13  the total length of the packet
     bit<1>  drop;             // drop flag
     bit<2>  ecn;
+    bit<14> dst_qid;
     bit<32> multicast_group;  // multicast group id
     bit<16> clone_session_id; // clone session id
     bit<1>  clone;            // clone flag
     bit<1>  resubmit;         // resubmit flag
     bit<8>  class_of_service; // class of service
     bit<32> port;             // port id
+    bit<3>  icos;
+    bit<3>  ocos;
+    bit<1>  mc;               // 0: unicast, 1: multicast
 }
 
 struct tuna_egress_output_metadata_t  {
@@ -183,6 +198,7 @@ struct tuna_egress_output_metadata_t  {
     bit<1>  resubmit;         // resubmit flag
     bit<8>  class_of_service; // class of service
     bit<32> port;             // port id
+    bit<4>  ochan;
 }
 
 // END:Metadata_output
@@ -355,6 +371,30 @@ extern Counter<W, S> {
   void count_from_ad(in bit<6> ad_index);
 }
 // END:Counter_extern
+
+// BEGIN:ActionProfile_extern
+/// Action profile is a table implementation that supports adding and removing
+/// members, where a member is a specific action and its data parameter values.
+/// Multiple table entries can reference the same member.
+extern ActionProfile {
+  /// Constructor
+  /// @param size Maximum number of members in the action profile
+  ActionProfile(bit<32> size);
+}
+// END:ActionProfile_extern
+
+// BEGIN:ActionSelector_extern
+/// Action selector extends action profile with support for selector groups.
+/// A group contains multiple members with weights for load balancing.
+/// The selector uses a hash of selector fields to choose a member from the group.
+extern ActionSelector {
+  /// Constructor
+  /// @param algo Hash algorithm to select a member in a group
+  /// @param size Maximum size (number of members or sum of weights depending on semantics)
+  /// @param outputWidth Width of the hash output in bits
+  ActionSelector(HashAlgorithm algo, bit<32> size, bit<32> outputWidth);
+}
+// END:ActionSelector_extern
 
 
 // BEGIN:Programmable_blocks

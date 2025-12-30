@@ -14,9 +14,10 @@ std::vector<const char *> *PortableOptions::process(int argc, char *const argv[]
         return nullptr;
     }
     this->exe_name = cstring(executablePath.stem().c_str());
-    searchForIncludePath(p4includePath,
-                         {"p4include/apollo"_cs, "../p4include/apollo"_cs, "../../p4include/apollo"_cs},
-                         executablePath.c_str());
+    searchForIncludePath(
+        p4includePath,
+        {"p4include/apollo"_cs, "../p4include/apollo"_cs, "../../p4include/apollo"_cs},
+        executablePath.c_str());
 
     auto remainingOptions = CompilerOptions::process(argc, argv);
 

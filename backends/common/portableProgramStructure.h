@@ -41,9 +41,13 @@ class PortableProgramStructure : public P4::ProgramStructure {
     ordered_map<cstring, const IR::Type_Struct *> metadata_types;
     ordered_map<cstring, const IR::Type_HeaderUnion *> header_union_types;
     ordered_map<cstring, const IR::Declaration_Variable *> headers;
+    ordered_map<cstring, const IR::Declaration_Variable *> variable_headers;
     ordered_map<cstring, const IR::Declaration_Variable *> metadata;
+    ordered_map<cstring, const IR::Declaration_Variable *> variable_metadata;
     ordered_map<cstring, const IR::Declaration_Variable *> header_stacks;
+    ordered_map<cstring, const IR::Declaration_Variable *> variable_header_stacks;
     ordered_map<cstring, const IR::Declaration_Variable *> header_unions;
+    ordered_map<cstring, const IR::Declaration_Variable *> variable_header_unions;
     ordered_map<cstring, const IR::Type_Error *> errors;
     ordered_map<cstring, const IR::Type_Enum *> enums;
     ordered_map<cstring, const IR::P4Parser *> parsers;

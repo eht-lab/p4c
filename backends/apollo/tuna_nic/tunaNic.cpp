@@ -16,8 +16,10 @@ limitations under the License.
 
 #include "tunaNic.h"
 
+#include "backends/apollo/common/annotations.h"
 #include "frontends/common/model.h"
 #include "frontends/p4/cloner.h"
+#include "options.h"
 
 namespace P4::Apollo {
 
@@ -321,7 +323,16 @@ void TunaNicBackend::convert(const IR::ToplevelBlock *tlb) {
 
     auto evaluator = new P4::EvaluatorPass(refMap, typeMap);
     auto program = tlb->getProgram();
-    PassManager simplify = {
+    PassManager simplify = {};
+
+    if (Apollo::TunaNicContext::get().options().loadIRFromJson == false) {
+        // ParseAnnotations is added only in case of not using --fromJson flag
+        simplify.addPasses({
+            new ParseAnnotations(),
+        });
+    }
+
+    simplify.addPasses({
         /* TODO */
         // new RenameUserMetadata(refMap, userMetaType, userMetaName),
         new P4::ClearTypeMap(typeMap),
@@ -345,7 +356,7 @@ void TunaNicBackend::convert(const IR::ToplevelBlock *tlb) {
         new P4::ClearTypeMap(typeMap),
         evaluator,
         [this, evaluator, structure]() { toplevel = evaluator->getToplevelBlock(); },
-    };
+    });
     auto hook = options.getDebugHook();
     simplify.addDebugHook(hook);
     program->apply(simplify);
